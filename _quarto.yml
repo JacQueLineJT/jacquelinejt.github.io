@@ -22,9 +22,7 @@ website:
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
+    theme: cyborg
     css: styles.css
     toc: true
 
