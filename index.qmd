@@ -5,8 +5,6 @@ bibliography: references.bib
 
 ## Welcome!
 
-![](images/ColgateSeal.png){width=130}
-
 Welcome to my portfolio website! Here you will find write-ups and analysis projects completed across my courses:
 
 ::: {.colgate-callout}

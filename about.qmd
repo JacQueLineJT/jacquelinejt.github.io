@@ -15,8 +15,6 @@ about:
 
 ## Education
 
-![](images/ColgateSeal.png){width=100}
-
 I am a student at Colgate University majoring in Applied Math and Studio Art. My anticipated graduation date is 2027.
 
 ## Technical Skills
