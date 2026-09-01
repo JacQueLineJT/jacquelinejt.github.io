@@ -2,28 +2,21 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "About Me",
     "section": "",
-    "text": "title: “About Me” about: template: solana # Options: trestles, jolla, solana, marquee, broadside image: images/konion.jpg links: - icon: github text: GitHub href: https://github.com/JacQueLineJT - icon: envelope text: Email href: mailto:jtong@colgate.edu —"
-  },
-  {
-    "objectID": "about.html#about-this-site",
-    "href": "about.html#about-this-site",
-    "title": "About",
-    "section": "",
-    "text": "title: “About Me” about: template: solana # Options: trestles, jolla, solana, marquee, broadside image: images/konion.jpg links: - icon: github text: GitHub href: https://github.com/JacQueLineJT - icon: envelope text: Email href: mailto:jtong@colgate.edu —"
+    "text": "I am a student at Colgate University majoring in Applied Math and Studio Art. My anticipated graduation date is 2027."
   },
   {
     "objectID": "about.html#education",
     "href": "about.html#education",
-    "title": "About",
-    "section": "Education",
-    "text": "Education\nI am a student at Colgate University majoring in Applied Math and Studio Art. My anticipated graduation date is 2027."
+    "title": "About Me",
+    "section": "",
+    "text": "I am a student at Colgate University majoring in Applied Math and Studio Art. My anticipated graduation date is 2027."
   },
   {
     "objectID": "about.html#technical-skills",
     "href": "about.html#technical-skills",
-    "title": "About",
+    "title": "About Me",
     "section": "Technical Skills",
     "text": "Technical Skills\n\nProgramming: Python, MATLAB, R, SQL\nWeb: HTML, CSS\nTools: Positron, Quarto, Git/GitHub, LaTeX, DBeaver, VS Code"
   },

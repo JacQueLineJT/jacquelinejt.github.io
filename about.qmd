@@ -1,9 +1,4 @@
 ---
-title: "About"
----
-
-About this site
----
 title: "About Me"
 about:
   template: solana 
