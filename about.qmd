@@ -3,3 +3,27 @@ title: "About"
 ---
 
 About this site
+---
+title: "About Me"
+about:
+  template: solana 
+  # Options: trestles, jolla, solana, marquee, broadside
+  image: images/konion.jpg
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/JacQueLineJT
+    - icon: envelope
+      text: Email
+      href: mailto:jtong@colgate.edu
+---
+
+## Education
+
+I am a student at Colgate University majoring in Applied Math and Studio Art. My anticipated graduation date is 2027.
+
+## Technical Skills
+
+* **Programming:** Python, MATLAB, R, SQL
+* **Web:** HTML, CSS
+* **Tools:** Positron, Quarto, Git/GitHub, LaTeX, DBeaver, VS Code
