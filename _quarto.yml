@@ -3,12 +3,22 @@ project:
   output-dir: docs
 
 website:
-  title: "website"
-  navbar:
-    left:
+  title: "Academic Portfolio"
+  sidebar:
+    style: "docked"
+    collapse-level: 1
+    search: false
+    contents:
       - href: index.qmd
-        text: Home
-      - about.qmd
+        text: "Home"
+        icon: house
+      - href: about.qmd
+        text: "About"
+        icon: person
+      - section: "Data Analysis I"
+        contents:
+          - text: "Homework 1: One Sample Inference"
+            href: MATH354/1-HW-OneSampleInference/HW1.qmd
 
 format:
   html:
@@ -19,4 +29,5 @@ format:
     toc: true
 
 
-
+execute:
+  freeze: auto
