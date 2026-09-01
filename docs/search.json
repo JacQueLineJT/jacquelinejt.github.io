@@ -34,7 +34,7 @@
     "href": "index.html",
     "title": "Academic Portfolio",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.",
+    "text": "Welcome to my portfolio website! Here you will find write-ups and analysis projects completed across my courses:\n\nData Analysis I (MATH 354): Applied statistical inference, hypothesis testing, and modeling.\n\nUse the sidebar menu to navigate through my coursework.",
     "crumbs": [
       "Home"
     ]
@@ -43,8 +43,8 @@
     "objectID": "index.html#welcome",
     "href": "index.html#welcome",
     "title": "Academic Portfolio",
-    "section": "Welcome!",
-    "text": "Welcome!\nWelcome to my portfolio website! Here you will find write-ups and analysis projects completed across my courses:\n\nData Analysis I (MATH 354): Applied statistical inference, hypothesis testing, and modeling.\n\nUse the sidebar menu to navigate through my coursework.",
+    "section": "",
+    "text": "Welcome to my portfolio website! Here you will find write-ups and analysis projects completed across my courses:\n\nData Analysis I (MATH 354): Applied statistical inference, hypothesis testing, and modeling.\n\nUse the sidebar menu to navigate through my coursework.",
     "crumbs": [
       "Home"
     ]
@@ -54,7 +54,17 @@
     "href": "index.html#ai-use-statement",
     "title": "Academic Portfolio",
     "section": "AI Use Statement",
-    "text": "AI Use Statement\nI believe generative AI can be a useful tool for learning when it supports rather than replaces my own thinking. I would use AI to help explain unfamiliar concepts, troubleshoot code, and identify possible mistakes in my work. However, I do not think AI should replace my own statistical reasoning or analysis. I should be able to understand and explain the work that I submit. I also think it is important to use AI critically and transparently. AI can provide incorrect or biased information, so I am responsible for checking its responses rather than accepting them automatically. This approach reflects the ASA’s emphasis on accountability, transparency, and integrity in statistical practice.",
+    "text": "AI Use Statement\nI believe generative AI can be a useful tool for learning when it supports rather than replaces my own thinking. I would use AI to help explain unfamiliar concepts, troubleshoot code, and identify possible mistakes in my work. However, I do not think AI should replace my own statistical reasoning or analysis. I should be able to understand and explain the work that I submit. I also think it is important to use AI critically and transparently. AI can provide incorrect or biased information, so I am responsible for checking its responses rather than accepting them automatically. This approach reflects the ASA’s emphasis on accountability, transparency, and integrity in statistical practice (Cipolli 2026; American Statistical Association 2022).",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#references",
+    "href": "index.html#references",
+    "title": "Academic Portfolio",
+    "section": "References",
+    "text": "References\n\n\nAmerican Statistical Association. 2022. Ethical Guidelines for Statistical Practice.\n\n\nCipolli, William. 2026. Generative AI Policy.",
     "crumbs": [
       "Home"
     ]

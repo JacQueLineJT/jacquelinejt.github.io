@@ -26,7 +26,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -147,6 +166,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome!</a></li>
   <li><a href="#ai-use-statement" id="toc-ai-use-statement" class="nav-link" data-scroll-target="#ai-use-statement">AI Use Statement</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -172,8 +192,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This is a Quarto website.</p>
-<p>To learn more about Quarto websites visit <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
 <section id="welcome" class="level2">
 <h2 class="anchored" data-anchor-id="welcome">Welcome!</h2>
 <p>Welcome to my portfolio website! Here you will find write-ups and analysis projects completed across my courses:</p>
@@ -184,7 +202,18 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="ai-use-statement" class="level2">
 <h2 class="anchored" data-anchor-id="ai-use-statement">AI Use Statement</h2>
-<p>I believe generative AI can be a useful tool for learning when it supports rather than replaces my own thinking. I would use AI to help explain unfamiliar concepts, troubleshoot code, and identify possible mistakes in my work. However, I do not think AI should replace my own statistical reasoning or analysis. I should be able to understand and explain the work that I submit. I also think it is important to use AI critically and transparently. AI can provide incorrect or biased information, so I am responsible for checking its responses rather than accepting them automatically. This approach reflects the ASA’s emphasis on accountability, transparency, and integrity in statistical practice.</p>
+<p>I believe generative AI can be a useful tool for learning when it supports rather than replaces my own thinking. I would use AI to help explain unfamiliar concepts, troubleshoot code, and identify possible mistakes in my work. However, I do not think AI should replace my own statistical reasoning or analysis. I should be able to understand and explain the work that I submit. I also think it is important to use AI critically and transparently. AI can provide incorrect or biased information, so I am responsible for checking its responses rather than accepting them automatically. This approach reflects the ASA’s emphasis on accountability, transparency, and integrity in statistical practice <span class="citation" data-cites="cipolliAI asa2022">(<a href="#ref-cipolliAI" role="doc-biblioref">Cipolli 2026</a>; <a href="#ref-asa2022" role="doc-biblioref">American Statistical Association 2022</a>)</span>.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-asa2022" class="csl-entry" role="listitem">
+American Statistical Association. 2022. <em>Ethical Guidelines for Statistical Practice</em>.
+</div>
+<div id="ref-cipolliAI" class="csl-entry" role="listitem">
+Cipolli, William. 2026. <em>Generative AI Policy</em>.
+</div>
+</div>
 
 
 </section>
