@@ -1,9 +1,9 @@
 ---
 title: "About Me"
+image: images/konion.jpg
+
 about:
-  template: solana 
-  # Options: trestles, jolla, solana, marquee, broadside
-  image: images/konion.jpg
+  template: solana
   links:
     - icon: github
       text: GitHub
