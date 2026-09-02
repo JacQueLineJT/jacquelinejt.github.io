@@ -1,12 +1,156 @@
 /* css styles */
 
+
+/* =========================
+   General page background
+   ========================= */
+
 body {
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-    url("images/Auguste-Adolphe Bertsch/main-image (6).jpeg");
+    linear-gradient(
+      rgba(0, 0, 0, 0.83),
+      rgba(0, 0, 0, 0.83)
+    ),
+    url("images/Auguste-Adolphe Bertsch/AAB11.jpg");
 
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+
+  min-height: 100vh;
+}
+
+
+
+/* =========================
+   Typography
+   ========================= */
+
+body {
+  font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+}
+
+
+/* Page title */
+
+h1,
+.title {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+
+/* Section headings */
+
+h2 {
+  font-weight: 500;
+  margin-top: 2.2rem;
+  margin-bottom: 0.9rem;
+}
+
+h3 {
+  font-weight: 500;
+  margin-top: 1.6rem;
+}
+
+
+/* Paragraphs */
+
+p {
+  line-height: 1.7;
+}
+
+
+/* Links */
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+/* Main content width */
+
+main.content {
+  max-width: 850px;
+}
+
+
+/* Sidebar text */
+
+#quarto-sidebar {
+  font-size: 0.95rem;
+}
+
+
+/* Right TOC */
+
+#quarto-margin-sidebar {
+  font-size: 0.85rem;
+  opacity: 0.82;
+}
+
+
+
+
+
+/* =========================
+   Different images by page
+   ========================= */
+
+/* Home */
+body.home-page {
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.83),
+      rgba(0, 0, 0, 0.83)
+    ),
+    url("images/Auguste-Adolphe Bertsch/AAB10.jpg");
+}
+
+/* About */
+body.about-page {
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.83),
+      rgba(0, 0, 0, 0.83)
+    ),
+    url("images/Auguste-Adolphe Bertsch/AAB11.jpg");
+}
+
+
+/* Homework 1 */
+body.hw1-page {
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.83),
+      rgba(0, 0, 0, 0.83)
+    ),
+    url("images/Auguste-Adolphe Bertsch/AAB4.jpg");
+}
+
+
+/* =========================
+   Quarto layout
+   ========================= */
+
+/* Let background show through */
+#quarto-content,
+.page-columns,
+main,
+main.content,
+#quarto-margin-sidebar {
+  background-color: transparent !important;
+}
+
+
+/* Left sidebar slightly lighter */
+#quarto-sidebar {
+  background-color: rgba(65, 65, 65, 0.28) !important;
 }

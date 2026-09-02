@@ -1,5 +1,6 @@
 ---
 title: "Academic Portfolio"
+body-classes: home-page
 bibliography: references.bib
 ---
 

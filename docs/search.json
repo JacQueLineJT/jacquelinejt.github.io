@@ -1,35 +1,5 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Me",
-    "section": "",
-    "text": "I am a student at Colgate University majoring in Applied Math and Studio Art. My anticipated graduation date is 2027.",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "about.html#education",
-    "href": "about.html#education",
-    "title": "About Me",
-    "section": "",
-    "text": "I am a student at Colgate University majoring in Applied Math and Studio Art. My anticipated graduation date is 2027.",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "about.html#technical-skills",
-    "href": "about.html#technical-skills",
-    "title": "About Me",
-    "section": "Technical Skills",
-    "text": "Technical Skills\n\nProgramming: Python, MATLAB, R, SQL\nWeb: HTML, CSS\nTools: Positron, Quarto, Git/GitHub, LaTeX, DBeaver, VS Code",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Academic Portfolio",
@@ -67,6 +37,36 @@
     "text": "References\n\n\nAmerican Statistical Association. 2022. Ethical Guidelines for Statistical Practice.\n\n\nCipolli, William. 2026. Generative AI Policy.",
     "crumbs": [
       "Home"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "I am a student at Colgate University majoring in Applied Math and Studio Art. My anticipated graduation date is 2027.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About Me",
+    "section": "",
+    "text": "I am a student at Colgate University majoring in Applied Math and Studio Art. My anticipated graduation date is 2027.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#technical-skills",
+    "href": "about.html#technical-skills",
+    "title": "About Me",
+    "section": "Technical Skills",
+    "text": "Technical Skills\n\nProgramming: Python, MATLAB, R, SQL\nWeb: HTML, CSS\nTools: Positron, Quarto, Git/GitHub, LaTeX, DBeaver, VS Code",
+    "crumbs": [
+      "About"
     ]
   }
 ]

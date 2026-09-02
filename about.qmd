@@ -1,9 +1,13 @@
 ---
 title: "About Me"
-image: images/konion.jpg
+
+format:
+  html:
+    body-classes: about-page
 
 about:
   template: solana
+  image: images/konion2.png
   links:
     - icon: github
       text: GitHub
