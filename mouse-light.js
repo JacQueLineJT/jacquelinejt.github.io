@@ -1,3 +1,27 @@
+/* =========================
+   Floating background ghost
+   ========================= */
+
+/*
+   Creates a faint duplicate of the page background
+   that slowly drifts behind the content.
+*/
+
+/* =========================
+   Floating background ghosts
+   ========================= */
+
+for (let i = 1; i <= 3; i++) {
+  const ghost = document.createElement("div");
+  ghost.className = `background-ghost ghost-${i}`;
+  document.body.prepend(ghost);
+}
+
+
+/* =========================
+   Mouse light setup
+   ========================= */
+
 const root = document.documentElement;
 const body = document.body;
 

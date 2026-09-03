@@ -1,22 +1,14 @@
-/* css styles */
-
-
 /* =========================================================
    1. GENERAL PAGE BACKGROUND
    ========================================================= */
 
 body {
-  background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0.83),
-      rgba(0, 0, 0, 0.83)
-    ),
-    url("images/Auguste-Adolphe Bertsch/AAB11.jpg");
-
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  /*
+     Body itself stays dark.
+     The actual photographic background is placed
+     on body::after so it can move with transform.
+  */
+  background: #000;
 
   min-height: 100vh;
 
@@ -27,12 +19,97 @@ body {
 
 
 /* =========================================================
+   MOVING BASE BACKGROUND
+   ========================================================= */
+
+body::after {
+  content: "";
+
+  position: fixed;
+
+  /*
+     Slight overscan in addition to scale().
+     This gives the image plenty of room to move
+     without ever exposing an edge.
+  */
+  inset: -4%;
+
+  pointer-events: none;
+  z-index: -1;
+
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.83),
+      rgba(0, 0, 0, 0.83)
+    ),
+    url("images/Auguste-Adolphe Bertsch/AAB11.jpg");
+
+  /*
+     cover works correctly in both portrait
+     and landscape orientations.
+  */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  /*
+     Very slow movement of the actual base image.
+  */
+  animation:
+    baseBackgroundDrift 42s ease-in-out infinite alternate;
+
+  will-change: transform;
+}
+
+
+/*
+   Very restrained movement.
+
+   Because the entire cover image is enlarged first,
+   these translations will not expose empty space.
+*/
+
+@keyframes baseBackgroundDrift {
+
+  0% {
+    transform:
+      translate(-1.2vw, -0.7vh)
+      scale(1.06);
+  }
+
+  27% {
+    transform:
+      translate(0.4vw, 0.8vh)
+      scale(1.065);
+  }
+
+  54% {
+    transform:
+      translate(1.3vw, 0.3vh)
+      scale(1.07);
+  }
+
+  78% {
+    transform:
+      translate(0.5vw, -1vh)
+      scale(1.065);
+  }
+
+  100% {
+    transform:
+      translate(-0.9vw, -0.3vh)
+      scale(1.06);
+  }
+}
+
+
+/* =========================================================
    2. DIFFERENT BACKGROUNDS BY PAGE
    ========================================================= */
 
 /* Home */
 
-body.home-page {
+body.home-page::after {
   background-image:
     linear-gradient(
       rgba(0, 0, 0, 0.83),
@@ -44,7 +121,7 @@ body.home-page {
 
 /* About */
 
-body.about-page {
+body.about-page::after {
   background-image:
     linear-gradient(
       rgba(0, 0, 0, 0.83),
@@ -56,7 +133,7 @@ body.about-page {
 
 /* Homework 1 */
 
-body.hw1-page {
+body.hw1-page::after {
   background-image:
     linear-gradient(
       rgba(0, 0, 0, 0.83),
@@ -64,6 +141,122 @@ body.hw1-page {
     ),
     url("images/Auguste-Adolphe Bertsch/AAB4.jpg");
 }
+
+
+/* =========================================================
+   2.5 FLOATING BACKGROUND GHOST
+   ========================================================= */
+
+/*
+   One subtle duplicate exposure.
+
+   It moves independently from the base image,
+   but only by a small amount.
+*/
+
+.background-ghost {
+  position: fixed;
+
+  /*
+     Oversized so its movement cannot expose
+     the rectangular edge.
+  */
+  inset: -6%;
+
+  pointer-events: none;
+  z-index: 0;
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  mix-blend-mode: screen;
+}
+
+
+/* Ghost image for each page */
+
+body.home-page .background-ghost {
+  background-image:
+    url("images/Auguste-Adolphe Bertsch/AAB10.jpg");
+}
+
+
+body.about-page .background-ghost {
+  background-image:
+    url("images/Auguste-Adolphe Bertsch/AAB11.jpg");
+}
+
+
+body.hw1-page .background-ghost {
+  background-image:
+    url("images/Auguste-Adolphe Bertsch/AAB4.jpg");
+}
+
+
+/* =========================================================
+   SINGLE GHOST
+   ========================================================= */
+
+.ghost-1 {
+  opacity: 0.04;
+
+  filter:
+    blur(0.5px)
+    brightness(1.06);
+
+  animation:
+    ghostDrift 26s ease-in-out infinite alternate;
+
+  will-change: transform;
+}
+
+
+@keyframes ghostDrift {
+
+  0% {
+    transform:
+      translate(-1.5vw, -0.8vh)
+      scale(1.035);
+  }
+
+  26% {
+    transform:
+      translate(0.2vw, 1vh)
+      scale(1.04);
+  }
+
+  53% {
+    transform:
+      translate(1.5vw, 0.4vh)
+      scale(1.035);
+  }
+
+  77% {
+    transform:
+      translate(0.7vw, -1.3vh)
+      scale(1.045);
+  }
+
+  100% {
+    transform:
+      translate(-1.1vw, -0.3vh)
+      scale(1.04);
+  }
+}
+
+
+/*
+   Your JavaScript still creates three ghost elements.
+   Only the first one is visible.
+*/
+
+.ghost-2,
+.ghost-3 {
+  display: none;
+}
+}
+
 
 
 /* =========================================================
