@@ -1,9 +1,9 @@
 /* css styles */
 
 
-/* =========================
-   General page background
-   ========================= */
+/* =========================================================
+   1. GENERAL PAGE BACKGROUND
+   ========================================================= */
 
 body {
   background-image:
@@ -20,95 +20,15 @@ body {
 
   min-height: 100vh;
 
-  font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.65;
-  letter-spacing: 0.01em;
+  font-family: "Courier Prime", "Courier New", Courier, monospace;
+  line-height: 1.68;
+  letter-spacing: 0.005em;
 }
 
 
-/* =========================
-   Typography
-   ========================= */
-
-/* Page title */
-
-h1,
-.title {
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
-
-
-/* Section headings */
-
-h2 {
-  position: relative;
-
-  font-weight: 500;
-  margin-top: 2.2rem;
-  margin-bottom: 0.9rem;
-
-  /* Remove Quarto / theme's original static line */
-  border-bottom: none !important;
-}
-
-h3 {
-  font-weight: 500;
-  margin-top: 1.6rem;
-}
-
-
-/* Paragraphs */
-
-p {
-  line-height: 1.7;
-}
-
-
-/* Links */
-
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-
-/* =========================
-   Main content
-   ========================= */
-
-main.content {
-  max-width: 850px;
-}
-
-
-/* =========================
-   Sidebar
-   ========================= */
-
-/* Left sidebar */
-
-#quarto-sidebar {
-  font-size: 0.95rem;
-  background-color: rgba(65, 65, 65, 0.28) !important;
-}
-
-
-/* Right table of contents */
-
-#quarto-margin-sidebar {
-  font-size: 0.85rem;
-  opacity: 0.82;
-}
-
-
-/* =========================
-   Different images by page
-   ========================= */
-
+/* =========================================================
+   2. DIFFERENT BACKGROUNDS BY PAGE
+   ========================================================= */
 
 /* Home */
 
@@ -146,11 +66,11 @@ body.hw1-page {
 }
 
 
-/* =========================
-   Quarto layout
-   ========================= */
+/* =========================================================
+   3. QUARTO LAYOUT
+   ========================================================= */
 
-/* Let background image show through */
+/* Allow the Bertsch image to show through */
 
 #quarto-content,
 .page-columns,
@@ -161,82 +81,249 @@ main.content,
 }
 
 
-/* =========================
-   About profile
-   ========================= */
+/* Main content width */
 
-.about-profile {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 3rem;
+main.content {
+  max-width: 850px;
 }
 
-.about-text {
-  flex: 1;
+
+/* =========================================================
+   4. TYPOGRAPHY
+   ========================================================= */
+
+
+/* Page title */
+
+h1,
+.title {
+  font-family: "Courier Prime", "Courier New", Courier, monospace !important;
+
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
-.about-photo {
-  width: 240px;
-  text-align: center;
+
+/* Section headings */
+
+h2 {
+  position: relative;
+
+  font-family: "Courier Prime", "Courier New", Courier, monospace !important;
+
+  font-weight: 500;
+  letter-spacing: 0.015em;
+
+  margin-top: 2.2rem;
+  margin-bottom: 0.9rem;
+
+  border-bottom: none !important;
 }
 
-.profile-image {
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 1rem;
+
+/* Smaller headings */
+
+h3 {
+  font-family: "Courier Prime", "Courier New", Courier, monospace !important;
+
+  font-weight: 500;
+  letter-spacing: 0.012em;
+
+  margin-top: 1.6rem;
+}
+
+
+/* Paragraphs */
+
+p {
+  font-family: "Courier Prime", "Courier New", Courier, monospace !important;
+
+  font-weight: 500;
+  line-height: 1.72;
+  letter-spacing: 0.003em;
+}
+
+
+/* Lists */
+
+main.content ul,
+main.content ol,
+main.content li {
+  font-family: "Courier Prime", "Courier New", Courier, monospace !important;
+
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+
+/* Bold text inside content */
+
+main.content strong {
+  font-weight: 700;
+}
+
+
+/* Links */
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   5. LEFT SIDEBAR
+   ========================================================= */
+
+#quarto-sidebar {
+  font-family: "Courier Prime", "Courier New", Courier, monospace !important;
+
+  font-size: 0.91rem;
+  letter-spacing: 0.005em;
+
+  background-color: rgba(65, 65, 65, 0.28) !important;
+}
+
+
+/* Force all sidebar text to use Courier */
+
+#quarto-sidebar *,
+#quarto-sidebar a,
+#quarto-sidebar .sidebar-title,
+#quarto-sidebar .sidebar-item-text,
+#quarto-sidebar .menu-text {
+  font-family: "Courier Prime", "Courier New", Courier, monospace !important;
+}
+
+
+/* Sidebar links */
+
+#quarto-sidebar a {
+  position: relative;
 
   transition:
-    transform 0.35s ease,
-    filter 0.35s ease;
-}
-
-.profile-image:hover {
-  transform: scale(1.02);
-  filter: brightness(1.05);
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
 
 
-/* =========================
-   About buttons
-   ========================= */
+/* Small movement on hover */
 
-.about-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 0.6rem;
-  margin-top: 0.8rem;
-}
-
-.about-buttons .btn {
-  padding: 0.35rem 0.7rem;
-  font-size: 0.9rem;
-
-  transition:
-    transform 0.25s ease,
-    background-color 0.25s ease,
-    border-color 0.25s ease;
-}
-
-.about-buttons .btn:hover {
-  transform: translateY(-2px);
+#quarto-sidebar a:hover {
+  opacity: 1;
+  transform: translateX(3px);
 }
 
 
-/* =========================
-   Subtle Motion Effects
-   ========================= */
+/* =========================================================
+   6. ACTIVE SIDEBAR INDICATOR
+   ========================================================= */
+
+/* Current page */
+
+#quarto-sidebar .active {
+  position: relative;
+}
 
 
-/* Main content entrance */
+/* Thin vertical indicator */
+
+#quarto-sidebar .active::before {
+  content: "";
+
+  position: absolute;
+
+  left: -12px;
+  top: 15%;
+
+  width: 1px;
+  height: 70%;
+
+  background: rgba(255, 255, 255, 0.65);
+
+  transform: scaleY(0);
+  transform-origin: top;
+
+  animation: sidebarIndicator 0.65s ease-out 0.25s forwards;
+}
+
+
+@keyframes sidebarIndicator {
+
+  from {
+    transform: scaleY(0);
+  }
+
+  to {
+    transform: scaleY(1);
+  }
+
+}
+
+
+/* =========================================================
+   7. RIGHT TABLE OF CONTENTS
+   ========================================================= */
+
+#quarto-margin-sidebar {
+  font-family: "Courier Prime", "Courier New", Courier, monospace !important;
+
+  font-size: 0.85rem;
+  letter-spacing: 0.005em;
+
+  opacity: 0.82;
+
+  animation: fadeIn 0.9s ease-out 0.18s both;
+}
+
+
+/* Force TOC text to use Courier */
+
+#quarto-margin-sidebar *,
+#quarto-margin-sidebar a,
+#TOC,
+#TOC a {
+  font-family: "Courier Prime", "Courier New", Courier, monospace !important;
+}
+
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.82;
+  }
+
+}
+
+
+/* =========================================================
+   8. PAGE ENTRANCE
+   ========================================================= */
+
+/* Page title enters first */
+
+.quarto-title-block,
+header#title-block-header {
+  animation: fadeUp 0.65s ease-out both;
+}
+
+
+/* Main content follows */
 
 main.content {
   animation: fadeUp 0.8s ease-out 0.08s both;
 }
 
+
 @keyframes fadeUp {
+
   from {
     opacity: 0;
     transform: translateY(12px);
@@ -246,29 +333,67 @@ main.content {
     opacity: 1;
     transform: translateY(0);
   }
+
 }
 
 
-/* Page title appears slightly earlier */
+/* =========================================================
+   9. STAGGERED CONTENT REVEAL
+   ========================================================= */
 
-.quarto-title-block,
-header#title-block-header {
-  animation: fadeUp 0.65s ease-out both;
+/*
+   Sections appear just slightly after the main page.
+   The delays are intentionally subtle.
+*/
+
+main.content > h2 {
+  animation: contentReveal 0.7s ease-out 0.14s both;
 }
 
 
-/* =========================
-   Animated section lines
-   ========================= */
+main.content > p {
+  animation: contentReveal 0.7s ease-out 0.20s both;
+}
 
-/* This replaces the original static h2 line */
+
+main.content > ul,
+main.content > ol {
+  animation: contentReveal 0.7s ease-out 0.26s both;
+}
+
+
+@keyframes contentReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(7px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   10. ANIMATED SECTION LINES
+   ========================================================= */
+
+/*
+   Replaces the original static h2 border.
+   The line grows quietly from left to right.
+*/
 
 h2::after {
   content: "";
+
   display: block;
 
   width: 100%;
   height: 1px;
+
   margin-top: 0.55rem;
 
   background: rgba(255, 255, 255, 0.28);
@@ -276,10 +401,12 @@ h2::after {
   transform: scaleX(0);
   transform-origin: left;
 
-  animation: lineReveal 0.8s ease-out 0.25s forwards;
+  animation: lineReveal 0.8s ease-out 0.28s forwards;
 }
 
+
 @keyframes lineReveal {
+
   from {
     transform: scaleX(0);
   }
@@ -287,28 +414,123 @@ h2::after {
   to {
     transform: scaleX(1);
   }
+
 }
 
 
-/* =========================
-   Sidebar navigation motion
-   ========================= */
+/* =========================================================
+   11. ABOUT PROFILE
+   ========================================================= */
 
-#quarto-sidebar a {
+.about-profile {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 3rem;
+}
+
+
+.about-text {
+  flex: 1;
+}
+
+
+.about-photo {
+  width: 240px;
+  text-align: center;
+
+  animation: profileReveal 0.85s ease-out 0.18s both;
+}
+
+
+@keyframes profileReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* Profile image */
+
+.profile-image {
+  width: 220px;
+  height: 220px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(214, 204, 188, 0.30);
+
+  box-shadow:
+    0 0 0 4px rgba(214, 204, 188, 0.055),
+    0 0 0 5px rgba(214, 204, 188, 0.18),
+    0 5px 18px rgba(0, 0, 0, 0.22);
+
+  margin-bottom: 1rem;
+
   transition:
-    opacity 0.2s ease,
-    transform 0.2s ease;
-}
-
-#quarto-sidebar a:hover {
-  opacity: 1;
-  transform: translateX(3px);
+    transform 0.35s ease,
+    filter 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 
-/* =========================
-   Text links
-   ========================= */
+/* Extremely subtle hover */
+
+.profile-image:hover {
+  transform: scale(1.02);
+  filter: brightness(1.05);
+}
+
+
+/* =========================================================
+   12. ABOUT BUTTONS
+   ========================================================= */
+
+.about-buttons {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 0.6rem;
+
+  margin-top: 0.8rem;
+}
+
+
+.about-buttons .btn {
+  font-family: "Courier Prime", "Courier New", Courier, monospace !important;
+
+  padding: 0.35rem 0.7rem;
+
+  font-size: 0.9rem;
+
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+.about-buttons .btn:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   13. TEXT LINK MOTION
+   ========================================================= */
 
 main.content a {
   transition:
@@ -316,33 +538,184 @@ main.content a {
     text-decoration-color 0.2s ease;
 }
 
+
 main.content a:hover {
   opacity: 0.82;
 }
 
 
-/* =========================
-   Right TOC entrance
-   ========================= */
+/* =========================================================
+   14. MOUSE LIGHT + LIGHT TRAILS
+   ========================================================= */
 
+:root {
+  --mouse-x: 50%;
+  --mouse-y: 45%;
+}
+
+
+/* Small soft light around cursor */
+
+body::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+  z-index: 0;
+
+  background:
+    radial-gradient(
+      circle 30px at var(--mouse-x) var(--mouse-y),
+      rgba(255, 250, 242, 0.12) 0%,
+      rgba(255, 250, 242, 0.055) 30%,
+      rgba(255, 250, 242, 0.018) 52%,
+      transparent 76%
+    );
+
+  opacity: 0;
+
+  transition: opacity 0.4s ease;
+}
+
+
+body.mouse-active::before {
+  opacity: 1;
+}
+
+
+/* Keep page content above effect */
+
+#quarto-content,
+#quarto-sidebar,
 #quarto-margin-sidebar {
-  animation: fadeIn 0.9s ease-out 0.18s both;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 0.82;
-  }
+  position: relative;
+  z-index: 1;
 }
 
 
 /* =========================
-   Responsive About layout
+   Mouse trails
    ========================= */
+
+.mouse-trail {
+  position: fixed;
+
+  width: 38px;
+  height: 1px;
+
+  pointer-events: none;
+
+  z-index: 0;
+
+  transform-origin: left center;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 252, 246, 0.48) 0%,
+      rgba(255, 248, 238, 0.24) 32%,
+      rgba(255, 248, 238, 0.08) 68%,
+      transparent 100%
+    );
+
+  box-shadow:
+    0 0 3px rgba(255, 248, 238, 0.16),
+    0 0 7px rgba(255, 248, 238, 0.07);
+
+  filter: blur(0.15px);
+
+  border-radius: 999px;
+
+  animation: trailFade 0.85s ease-out forwards;
+}
+
+
+/* Small bright head */
+
+.mouse-trail::before {
+  content: "";
+
+  position: absolute;
+
+  left: -1px;
+  top: 50%;
+
+  width: 3px;
+  height: 3px;
+
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+
+  background: rgba(255, 252, 246, 0.68);
+
+  box-shadow:
+    0 0 4px rgba(255, 248, 238, 0.30);
+}
+
+
+/* Very faint secondary trail */
+
+.mouse-trail::after {
+  content: "";
+
+  position: absolute;
+
+  left: 4px;
+  top: 2px;
+
+  width: 72%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 248, 238, 0.12),
+      transparent
+    );
+
+  filter: blur(0.5px);
+
+  opacity: 0.7;
+}
+
+
+@keyframes trailFade {
+
+  0% {
+    opacity: 0.9;
+    transform: scaleX(1);
+  }
+
+  45% {
+    opacity: 0.55;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scaleX(0.25);
+  }
+
+}
+
+
+/* =========================================================
+   15. VERY SUBTLE IMAGE / BUTTON FOCUS
+   ========================================================= */
+
+.about-buttons .btn:focus-visible,
+main.content a:focus-visible,
+#quarto-sidebar a:focus-visible {
+  outline: 1px solid rgba(255, 255, 255, 0.55);
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   16. RESPONSIVE ABOUT PAGE
+   ========================================================= */
 
 @media (max-width: 768px) {
 
@@ -350,17 +723,28 @@ main.content a:hover {
     flex-direction: column;
   }
 
+
   .about-photo {
     width: 100%;
   }
+
+
+  .profile-image {
+    width: 190px;
+    height: 190px;
+  }
+
 }
 
 
-/* =========================
-   Accessibility
-   ========================= */
+/* =========================================================
+   17. ACCESSIBILITY
+   ========================================================= */
 
-/* Disable animation for users who prefer reduced motion */
+/*
+   Respect the visitor's operating-system preference
+   for reduced motion.
+*/
 
 @media (prefers-reduced-motion: reduce) {
 

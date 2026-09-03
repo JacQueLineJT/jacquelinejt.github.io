@@ -27,6 +27,7 @@ format:
     theme: cyborg
     css: styles.css
     toc: true
+    include-after-body: mouse-light.html
 
 
 execute:
