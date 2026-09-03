@@ -19,19 +19,16 @@ body {
   background-attachment: fixed;
 
   min-height: 100vh;
+
+  font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.65;
+  letter-spacing: 0.01em;
 }
 
 
 /* =========================
    Typography
    ========================= */
-
-body {
-  font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.65;
-  letter-spacing: 0.01em;
-}
-
 
 /* Page title */
 
@@ -45,9 +42,14 @@ h1,
 /* Section headings */
 
 h2 {
+  position: relative;
+
   font-weight: 500;
   margin-top: 2.2rem;
   margin-bottom: 0.9rem;
+
+  /* Remove Quarto / theme's original static line */
+  border-bottom: none !important;
 }
 
 h3 {
@@ -78,8 +80,6 @@ a:hover {
    Main content
    ========================= */
 
-/* Same content width on all pages */
-
 main.content {
   max-width: 850px;
 }
@@ -89,10 +89,11 @@ main.content {
    Sidebar
    ========================= */
 
-/* Left sidebar text */
+/* Left sidebar */
 
 #quarto-sidebar {
   font-size: 0.95rem;
+  background-color: rgba(65, 65, 65, 0.28) !important;
 }
 
 
@@ -160,12 +161,6 @@ main.content,
 }
 
 
-/* Left sidebar slightly lighter */
-
-#quarto-sidebar {
-  background-color: rgba(65, 65, 65, 0.28) !important;
-}
-
 /* =========================
    About profile
    ========================= */
@@ -192,8 +187,188 @@ main.content,
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 1rem;
+
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
 }
 
-.about-photo .btn {
-  margin: 0.25rem;
+.profile-image:hover {
+  transform: scale(1.02);
+  filter: brightness(1.05);
+}
+
+
+/* =========================
+   About buttons
+   ========================= */
+
+.about-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+}
+
+.about-buttons .btn {
+  padding: 0.35rem 0.7rem;
+  font-size: 0.9rem;
+
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.about-buttons .btn:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   Subtle Motion Effects
+   ========================= */
+
+
+/* Main content entrance */
+
+main.content {
+  animation: fadeUp 0.8s ease-out 0.08s both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Page title appears slightly earlier */
+
+.quarto-title-block,
+header#title-block-header {
+  animation: fadeUp 0.65s ease-out both;
+}
+
+
+/* =========================
+   Animated section lines
+   ========================= */
+
+/* This replaces the original static h2 line */
+
+h2::after {
+  content: "";
+  display: block;
+
+  width: 100%;
+  height: 1px;
+  margin-top: 0.55rem;
+
+  background: rgba(255, 255, 255, 0.28);
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  animation: lineReveal 0.8s ease-out 0.25s forwards;
+}
+
+@keyframes lineReveal {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+
+/* =========================
+   Sidebar navigation motion
+   ========================= */
+
+#quarto-sidebar a {
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+#quarto-sidebar a:hover {
+  opacity: 1;
+  transform: translateX(3px);
+}
+
+
+/* =========================
+   Text links
+   ========================= */
+
+main.content a {
+  transition:
+    opacity 0.2s ease,
+    text-decoration-color 0.2s ease;
+}
+
+main.content a:hover {
+  opacity: 0.82;
+}
+
+
+/* =========================
+   Right TOC entrance
+   ========================= */
+
+#quarto-margin-sidebar {
+  animation: fadeIn 0.9s ease-out 0.18s both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.82;
+  }
+}
+
+
+/* =========================
+   Responsive About layout
+   ========================= */
+
+@media (max-width: 768px) {
+
+  .about-profile {
+    flex-direction: column;
+  }
+
+  .about-photo {
+    width: 100%;
+  }
+}
+
+
+/* =========================
+   Accessibility
+   ========================= */
+
+/* Disable animation for users who prefer reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
 }
