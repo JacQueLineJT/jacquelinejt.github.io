@@ -44,7 +44,7 @@
     "href": "about.html",
     "title": "About Me",
     "section": "",
-    "text": "I am a student at Colgate University majoring in Applied Math and Studio Art. My anticipated graduation date is 2027.",
+    "text": "I am a student at Colgate University majoring in Applied Math and Studio Art. My anticipated graduation date is 2027.\n\n\n\n\nProgramming: Python, MATLAB, R, SQL\nWeb: HTML, CSS\nTools: Positron, Quarto, Git/GitHub, LaTeX, DBeaver, VS Code\n\n\n\n\n\n\n  GitHub \n  Email",
     "crumbs": [
       "About"
     ]
@@ -63,8 +63,8 @@
     "objectID": "about.html#technical-skills",
     "href": "about.html#technical-skills",
     "title": "About Me",
-    "section": "Technical Skills",
-    "text": "Technical Skills\n\nProgramming: Python, MATLAB, R, SQL\nWeb: HTML, CSS\nTools: Positron, Quarto, Git/GitHub, LaTeX, DBeaver, VS Code",
+    "section": "",
+    "text": "Programming: Python, MATLAB, R, SQL\nWeb: HTML, CSS\nTools: Positron, Quarto, Git/GitHub, LaTeX, DBeaver, VS Code",
     "crumbs": [
       "About"
     ]

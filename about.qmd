@@ -4,18 +4,11 @@ title: "About Me"
 format:
   html:
     body-classes: about-page
-
-about:
-  template: solana
-  image: images/konion2.png
-  links:
-    - icon: github
-      text: GitHub
-      href: https://github.com/JacQueLineJT
-    - icon: envelope
-      text: Email
-      href: mailto:jtong@colgate.edu
 ---
+
+::: {.about-profile}
+
+::: {.about-text}
 
 ## Education
 
@@ -26,3 +19,23 @@ I am a student at Colgate University majoring in Applied Math and Studio Art. My
 * **Programming:** Python, MATLAB, R, SQL
 * **Web:** HTML, CSS
 * **Tools:** Positron, Quarto, Git/GitHub, LaTeX, DBeaver, VS Code
+
+:::
+
+::: {.about-photo}
+
+![](images/konion2.png){.profile-image}
+
+<div class="about-buttons">
+  <a href="https://github.com/JacQueLineJT" class="btn btn-outline-light">
+    <i class="bi bi-github"></i> GitHub
+  </a>
+
+  <a href="mailto:jtong@colgate.edu" class="btn btn-outline-light">
+    <i class="bi bi-envelope"></i> Email
+  </a>
+</div>
+
+:::
+
+:::

@@ -41,6 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -141,60 +142,67 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-  <ul>
-  <li><a href="#education" id="toc-education" class="nav-link active" data-scroll-target="#education">Education</a></li>
-  <li><a href="#technical-skills" id="toc-technical-skills" class="nav-link" data-scroll-target="#technical-skills">Technical Skills</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<div class="quarto-about-solana column-body">
-  <div class="about-entity">
-    <div class="entity-contents">
-      <header id="title-block-header" class="quarto-title-block default">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">About Me</h1>
 </div>
-<div class="quarto-title-meta">
-  </div>
-</header> <div class="about-links">
-  <a href="https://github.com/JacQueLineJT" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">GitHub</span>
-  </a>
-  <a href="mailto:jtong@colgate.edu" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text">Email</span>
-  </a>
-</div>
-      <div class="about-contents"><main class="content" id="quarto-document-content">
 
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="about-profile">
+<div class="about-text">
 <section id="education" class="level2">
-<h2 data-anchor-id="education">Education</h2>
+<h2 class="anchored" data-anchor-id="education">Education</h2>
 <p>I am a student at Colgate University majoring in Applied Math and Studio Art. My anticipated graduation date is 2027.</p>
 </section>
 <section id="technical-skills" class="level2">
-<h2 data-anchor-id="technical-skills">Technical Skills</h2>
+<h2 class="anchored" data-anchor-id="technical-skills">Technical Skills</h2>
 <ul>
 <li><strong>Programming:</strong> Python, MATLAB, R, SQL</li>
 <li><strong>Web:</strong> HTML, CSS</li>
 <li><strong>Tools:</strong> Positron, Quarto, Git/GitHub, LaTeX, DBeaver, VS Code</li>
 </ul>
-
-
 </section>
-</main></div>
-    </div>
-    <img src="images/konion2.png" class="about-image
-  rounded " style="width: 15em;">
-  </div>
 </div>
- <!-- /main -->
+<div class="about-photo">
+<p><img src="images/konion2.png" class="profile-image img-fluid"></p>
+<div class="about-buttons">
+<p><a href="https://github.com/JacQueLineJT" class="btn btn-outline-light"> <i class="bi bi-github"></i> GitHub </a></p>
+<p><a href="mailto:jtong@colgate.edu" class="btn btn-outline-light"> <i class="bi bi-envelope"></i> Email </a></p>
+</div>
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

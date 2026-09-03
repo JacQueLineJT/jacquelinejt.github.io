@@ -22,7 +22,6 @@ body {
 }
 
 
-
 /* =========================
    Typography
    ========================= */
@@ -75,21 +74,29 @@ a:hover {
 }
 
 
-/* Main content width */
+/* =========================
+   Main content
+   ========================= */
+
+/* Same content width on all pages */
 
 main.content {
   max-width: 850px;
 }
 
 
-/* Sidebar text */
+/* =========================
+   Sidebar
+   ========================= */
+
+/* Left sidebar text */
 
 #quarto-sidebar {
   font-size: 0.95rem;
 }
 
 
-/* Right TOC */
+/* Right table of contents */
 
 #quarto-margin-sidebar {
   font-size: 0.85rem;
@@ -97,14 +104,13 @@ main.content {
 }
 
 
-
-
-
 /* =========================
    Different images by page
    ========================= */
 
+
 /* Home */
+
 body.home-page {
   background-image:
     linear-gradient(
@@ -114,7 +120,9 @@ body.home-page {
     url("images/Auguste-Adolphe Bertsch/AAB10.jpg");
 }
 
+
 /* About */
+
 body.about-page {
   background-image:
     linear-gradient(
@@ -126,6 +134,7 @@ body.about-page {
 
 
 /* Homework 1 */
+
 body.hw1-page {
   background-image:
     linear-gradient(
@@ -140,7 +149,8 @@ body.hw1-page {
    Quarto layout
    ========================= */
 
-/* Let background show through */
+/* Let background image show through */
+
 #quarto-content,
 .page-columns,
 main,
@@ -151,6 +161,39 @@ main.content,
 
 
 /* Left sidebar slightly lighter */
+
 #quarto-sidebar {
   background-color: rgba(65, 65, 65, 0.28) !important;
+}
+
+/* =========================
+   About profile
+   ========================= */
+
+.about-profile {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-photo {
+  width: 240px;
+  text-align: center;
+}
+
+.profile-image {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.about-photo .btn {
+  margin: 0.25rem;
 }
