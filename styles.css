@@ -84,14 +84,13 @@ main.content,
 /* Main content width */
 
 main.content {
-  max-width: 850px;
+  max-width: 810px;
 }
 
 
 /* =========================================================
    4. TYPOGRAPHY
    ========================================================= */
-
 
 /* Page title */
 
@@ -156,6 +155,14 @@ main.content li {
 }
 
 
+/* Improve body text contrast */
+
+main.content p,
+main.content li {
+  color: rgba(245, 242, 236, 0.92);
+}
+
+
 /* Bold text inside content */
 
 main.content strong {
@@ -185,6 +192,13 @@ a:hover {
   letter-spacing: 0.005em;
 
   background-color: rgba(65, 65, 65, 0.28) !important;
+}
+
+
+/* Slightly soften the Colgate seal */
+
+#quarto-sidebar img {
+  opacity: 0.88;
 }
 
 
@@ -222,14 +236,12 @@ a:hover {
    6. ACTIVE SIDEBAR INDICATOR
    ========================================================= */
 
-/* Current page */
-
 #quarto-sidebar .active {
   position: relative;
 }
 
 
-/* Thin vertical indicator */
+/* Thin warm-gray vertical indicator */
 
 #quarto-sidebar .active::before {
   content: "";
@@ -242,7 +254,7 @@ a:hover {
   width: 1px;
   height: 70%;
 
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(220, 212, 198, 0.55);
 
   transform: scaleY(0);
   transform-origin: top;
@@ -271,10 +283,10 @@ a:hover {
 #quarto-margin-sidebar {
   font-family: "Courier Prime", "Courier New", Courier, monospace !important;
 
-  font-size: 0.85rem;
+  font-size: 0.80rem;
   letter-spacing: 0.005em;
 
-  opacity: 0.82;
+  opacity: 0.70;
 
   animation: fadeIn 0.9s ease-out 0.18s both;
 }
@@ -297,7 +309,7 @@ a:hover {
   }
 
   to {
-    opacity: 0.82;
+    opacity: 0.70;
   }
 
 }
@@ -341,11 +353,6 @@ main.content {
    9. STAGGERED CONTENT REVEAL
    ========================================================= */
 
-/*
-   Sections appear just slightly after the main page.
-   The delays are intentionally subtle.
-*/
-
 main.content > h2 {
   animation: contentReveal 0.7s ease-out 0.14s both;
 }
@@ -382,8 +389,7 @@ main.content > ol {
    ========================================================= */
 
 /*
-   Replaces the original static h2 border.
-   The line grows quietly from left to right.
+   Warm archival gray rather than pure white.
 */
 
 h2::after {
@@ -396,7 +402,7 @@ h2::after {
 
   margin-top: 0.55rem;
 
-  background: rgba(255, 255, 255, 0.28);
+  background: rgba(220, 212, 198, 0.22);
 
   transform: scaleX(0);
   transform-origin: left;
@@ -467,22 +473,25 @@ h2::after {
   height: 220px;
 
   object-fit: cover;
-
   border-radius: 50%;
 
-  border: 1px solid rgba(214, 204, 188, 0.30);
+  /* Fine rim directly around the image */
+  border: 1px solid rgba(214, 204, 188, 0.28);
 
+  /* Detached optical-instrument ring */
+  outline: 1px solid rgba(214, 204, 188, 0.15);
+  outline-offset: 7px;
+
+  /* Subtle depth only */
   box-shadow:
-    0 0 0 4px rgba(214, 204, 188, 0.055),
-    0 0 0 5px rgba(214, 204, 188, 0.18),
-    0 5px 18px rgba(0, 0, 0, 0.22);
+    0 5px 18px rgba(0, 0, 0, 0.20);
 
   margin-bottom: 1rem;
 
   transition:
     transform 0.35s ease,
     filter 0.35s ease,
-    box-shadow 0.35s ease;
+    outline-color 0.35s ease;
 }
 
 
@@ -491,6 +500,8 @@ h2::after {
 .profile-image:hover {
   transform: scale(1.02);
   filter: brightness(1.05);
+
+  outline-color: rgba(214, 204, 188, 0.30);
 }
 
 
@@ -505,19 +516,29 @@ h2::after {
 
   gap: 0.6rem;
 
-  margin-top: 0.8rem;
+  margin-top: 0.55rem;
 }
 
 
 .about-buttons .btn {
   font-family: "Courier Prime", "Courier New", Courier, monospace !important;
 
-  padding: 0.35rem 0.7rem;
+  padding: 0.32rem 0.75rem;
 
-  font-size: 0.9rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+
+  border-radius: 2px;
+
+  border: 1px solid rgba(220, 212, 198, 0.32);
+
+  color: rgba(235, 230, 220, 0.72);
+
+  background: rgba(0, 0, 0, 0.08);
 
   transition:
     transform 0.25s ease,
+    color 0.25s ease,
     background-color 0.25s ease,
     border-color 0.25s ease;
 }
@@ -525,6 +546,12 @@ h2::after {
 
 .about-buttons .btn:hover {
   transform: translateY(-2px);
+
+  color: rgba(245, 240, 230, 0.95);
+
+  border-color: rgba(220, 212, 198, 0.55);
+
+  background: rgba(220, 212, 198, 0.05);
 }
 
 
@@ -708,7 +735,7 @@ body.mouse-active::before {
 .about-buttons .btn:focus-visible,
 main.content a:focus-visible,
 #quarto-sidebar a:focus-visible {
-  outline: 1px solid rgba(255, 255, 255, 0.55);
+  outline: 1px solid rgba(220, 212, 198, 0.55);
   outline-offset: 3px;
 }
 
@@ -740,11 +767,6 @@ main.content a:focus-visible,
 /* =========================================================
    17. ACCESSIBILITY
    ========================================================= */
-
-/*
-   Respect the visitor's operating-system preference
-   for reduced motion.
-*/
 
 @media (prefers-reduced-motion: reduce) {
 
