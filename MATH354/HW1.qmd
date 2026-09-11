@@ -117,3 +117,107 @@ test.result$conf.int
 ```
 
 We are 95% confident that the population mean retrieval proportion is approximately $[0.736, \infty)$. Since this lower bound is above the chance level of $0.50$, the confidence interval is consistent with the conclusion that the dogs performed better than chance.
+
+
+## Question 2
+
+### Part a
+
+The data a qualitative, and each trial is a Bournulli trial (either succeed or fail), so binomial distribution is possible. However, the trials may not be independent, since there should be correlations between each trials. Specifically, the performance of each dog in the two new-toy trials may tend to be consistent. Moreover, the probability of selecting the new toy by chance may not be exactly 50%, depending on dogs' behaviors.
+
+### Part b
+
+The probability that a dog succeed in both trials are 
+
+$$
+p = (0.50)(0.50) = 0.25.
+$$
+
+Let $X_i = 1$ be the dog $i$ getting both toys right on the first try, and $X_i = 0$ be otherwise,
+
+$$
+X_i \sim \operatorname{Bornoulli}(0.25).
+$$
+
+Therefore, the total number of dogs getting both toys right follows a binomial distribution.
+
+$$
+B \sim \operatorname{Binomial}(10, 0.25).
+$$
+
+Since all 10 dogs got both trials right, 
+
+$$
+P(B=10) = \binom{10}{10}(0.25)^{10}(0.75)^0=(0.25)^{10} \approx 9.54 \times 10^{-7}.
+$$
+
+Thus, the probability that all $n=10$ dogs would get both trials correct is approximately $9.54 \times 10^{-7}$.
+
+
+### Part c
+
+The Gaussian approximation has mean
+
+$$
+\mu_Y = np = 10(0.25) = 2.5
+$$
+
+and standard deviation
+
+$$
+\sigma_Y = \sqrt{np(1-p)} = \sqrt{10(0.25)(0.75)}
+\approx 1.369.
+$$
+
+Using the continuity correction,
+
+$$
+P(B=10)
+\approx
+P(9.5 < Y < 10.5).
+$$
+
+And then we standardize it using
+
+$$
+Z = \frac{Y-\mu_Y}{\sigma_Y}.
+$$
+
+The lower and upper bounds are
+
+$$
+\begin{aligned}
+z_{\text{lower}} &= \frac{9.5-2.5}{1.369}
+\approx 5.11, \\
+z_{\text{upper}} &= \frac{10.5-2.5}{1.369}
+\approx 5.84
+\end{aligned}
+$$
+
+Therefore, 
+
+$$
+P(B=10)
+\approx
+P(5.11 < Z < 5.84)
+\approx 1.57 \times 10^{-7}.
+$$
+
+Compared to $9.54 \times 10^{-7}$, which is the binomial probability from Part b, the Gaussian probability is much smaller. They are not close.
+
+This is because one of the conditions to apply Gaussian distribution to approximate probabilities, is to make sure that
+
+$$
+np \ge 15,\\
+and \\
+n(1-p) \ge 15.
+$$
+
+In this case,
+
+$$
+np = 10(0.25) = 2.5\\
+and \\
+n(1-p) = 10(1-0.25) = 7.5,
+$$
+both of which are less than 15, so the Gaussian approximation conditions are not satisfied.

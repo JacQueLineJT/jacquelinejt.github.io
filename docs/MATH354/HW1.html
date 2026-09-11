@@ -217,6 +217,12 @@ window.Quarto = {
   <li><a href="#part-a" id="toc-part-a" class="nav-link" data-scroll-target="#part-a">Part a</a></li>
   <li><a href="#part-b" id="toc-part-b" class="nav-link" data-scroll-target="#part-b">Part b</a></li>
   </ul></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a>
+  <ul class="collapse">
+  <li><a href="#part-a-1" id="toc-part-a-1" class="nav-link" data-scroll-target="#part-a-1">Part a</a></li>
+  <li><a href="#part-b-1" id="toc-part-b-1" class="nav-link" data-scroll-target="#part-b-1">Part b</a></li>
+  <li><a href="#part-c" id="toc-part-c" class="nav-link" data-scroll-target="#part-c">Part c</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -329,7 +335,7 @@ t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}.
 </section>
 <section id="effect-size" class="level4">
 <h4 class="anchored" data-anchor-id="effect-size">Effect Size</h4>
-<p>To evaluate the magnitude of the effect, Hedges’ <span class="math inline">\(g\)</span> was calculated.</p>
+<p>To evaluate the magnitude of the effect, Hedges’<span class="math inline">\(g\)</span> was calculated.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(effectsize)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -345,7 +351,7 @@ t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}.
 - One-sided CIs: upper bound fixed at [Inf].</code></pre>
 </div>
 </div>
-<p>The estimated effect size was Hedges’ <span class="math inline">\(g = 1.72\)</span>, indicating a large effect. The mean retrieval performance was approximately 1.72 standard deviations above the chance level of <span class="math inline">\(0.50\)</span>.</p>
+<p>The estimated effect size was Hedges’<span class="math inline">\(g = 1.72\)</span>, indicating a large effect. The mean retrieval performance was approximately 1.72 standard deviations above the chance level of <span class="math inline">\(0.50\)</span>.</p>
 </section>
 <section id="confidence-interval" class="level4">
 <h4 class="anchored" data-anchor-id="confidence-interval">Confidence Interval</h4>
@@ -359,9 +365,87 @@ attr(,"conf.level")
 </div>
 </div>
 <p>We are 95% confident that the population mean retrieval proportion is approximately <span class="math inline">\([0.736, \infty)\)</span>. Since this lower bound is above the chance level of <span class="math inline">\(0.50\)</span>, the confidence interval is consistent with the conclusion that the dogs performed better than chance.</p>
-
-
 </section>
+</section>
+</section>
+<section id="question-2" class="level2">
+<h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
+<section id="part-a-1" class="level3">
+<h3 class="anchored" data-anchor-id="part-a-1">Part a</h3>
+<p>The data a qualitative, and each trial is a Bournulli trial (either succeed or fail), so binomial distribution is possible. However, the trials may not be independent, since there should be correlations between each trials. Specifically, the performance of each dog in the two new-toy trials may tend to be consistent. Moreover, the probability of selecting the new toy by chance may not be exactly 50%, depending on dogs’ behaviors.</p>
+</section>
+<section id="part-b-1" class="level3">
+<h3 class="anchored" data-anchor-id="part-b-1">Part b</h3>
+<p>The probability that a dog succeed in both trials are</p>
+<p><span class="math display">\[
+p = (0.50)(0.50) = 0.25.
+\]</span></p>
+<p>Let <span class="math inline">\(X_i = 1\)</span> be the dog <span class="math inline">\(i\)</span> getting both toys right on the first try, and <span class="math inline">\(X_i = 0\)</span> be otherwise,</p>
+<p><span class="math display">\[
+X_i \sim \operatorname{Bornoulli}(0.25).
+\]</span></p>
+<p>Therefore, the total number of dogs getting both toys right follows a binomial distribution.</p>
+<p><span class="math display">\[
+B \sim \operatorname{Binomial}(10, 0.25).
+\]</span></p>
+<p>Since all 10 dogs got both trials right,</p>
+<p><span class="math display">\[
+P(B=10) = \binom{10}{10}(0.25)^{10}(0.75)^0=(0.25)^{10} \approx 9.54 \times 10^{-7}.
+\]</span></p>
+<p>Thus, the probability that all <span class="math inline">\(n=10\)</span> dogs would get both trials correct is approximately <span class="math inline">\(9.54 \times 10^{-7}\)</span>.</p>
+</section>
+<section id="part-c" class="level3">
+<h3 class="anchored" data-anchor-id="part-c">Part c</h3>
+<p>The Gaussian approximation has mean</p>
+<p><span class="math display">\[
+\mu_Y = np = 10(0.25) = 2.5
+\]</span></p>
+<p>and standard deviation</p>
+<p><span class="math display">\[
+\sigma_Y = \sqrt{np(1-p)} = \sqrt{10(0.25)(0.75)}
+\approx 1.369.
+\]</span></p>
+<p>Using the continuity correction,</p>
+<p><span class="math display">\[
+P(B=10)
+\approx
+P(9.5 &lt; Y &lt; 10.5).
+\]</span></p>
+<p>And then we standardize it using</p>
+<p><span class="math display">\[
+Z = \frac{Y-\mu_Y}{\sigma_Y}.
+\]</span></p>
+<p>The lower and upper bounds are</p>
+<p><span class="math display">\[
+\begin{aligned}
+z_{\text{lower}} &amp;= \frac{9.5-2.5}{1.369}
+\approx 5.11, \\
+z_{\text{upper}} &amp;= \frac{10.5-2.5}{1.369}
+\approx 5.84
+\end{aligned}
+\]</span></p>
+<p>Therefore,</p>
+<p><span class="math display">\[
+P(B=10)
+\approx
+P(5.11 &lt; Z &lt; 5.84)
+\approx 1.57 \times 10^{-7}.
+\]</span></p>
+<p>Compared to <span class="math inline">\(9.54 \times 10^{-7}\)</span>, which is the binomial probability from Part b, the Gaussian probability is much smaller. They are not close.</p>
+<p>This is because one of the conditions to apply Gaussian distribution to approximate probabilities, is to make sure that</p>
+<p><span class="math display">\[
+np \ge 15,\\
+and \\
+n(1-p) \ge 15.
+\]</span></p>
+<p>In this case,</p>
+<p><span class="math display">\[
+np = 10(0.25) = 2.5\\
+and \\
+n(1-p) = 10(1-0.25) = 7.5,
+\]</span> both of which are less than 15, so the Gaussian approximation conditions are not satisfied.</p>
+
+
 </section>
 </section>
 
