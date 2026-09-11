@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Lions like to eat onions">
 
-<title>Homework 1 – Academic Portfolio</title>
+<title>Homework 1: One-Sample Inference – Academic Portfolio</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,6 +26,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -75,6 +111,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -88,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Homework 1</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../MATH354/HW1.html">Data Analysis I</a></li><li class="breadcrumb-item"><a href="../MATH354/HW1.html">Homework 1: One Sample Inference</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -122,16 +187,16 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Data Analysis I</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../MATH354/1-HW-OneSampleInference/HW1.qmd" class="sidebar-item-text sidebar-link">
+  <a href="../MATH354/HW1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Homework 1: One Sample Inference</span></a>
   </div>
 </li>
@@ -142,21 +207,37 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#question-1" id="toc-question-1" class="nav-link active" data-scroll-target="#question-1">Question 1</a>
+  <ul class="collapse">
+  <li><a href="#part-a" id="toc-part-a" class="nav-link" data-scroll-target="#part-a">Part a</a></li>
+  <li><a href="#part-b" id="toc-part-b" class="nav-link" data-scroll-target="#part-b">Part b</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../MATH354/HW1.html">Data Analysis I</a></li><li class="breadcrumb-item"><a href="../MATH354/HW1.html">Homework 1: One Sample Inference</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Homework 1</h1>
+<h1 class="title">Homework 1: One-Sample Inference</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lions like to eat onions </p>
+          </div>
+  </div>
     
   
     
@@ -167,8 +248,88 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="question-1" class="level2">
+<h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
+<section id="part-a" class="level3">
+<h3 class="anchored" data-anchor-id="part-a">Part a</h3>
+<p>The data are the proportions of successful retrievals out of 12 tests for each dog, so they are quantitative rather than simple 0/1 Bernoulli trials. Thus, a one-sample z-test is not a good fit.</p>
+<p>A one-sample t-test and Wilcoxon signed-rank test are plausible.</p>
+<p>For the one-sample t-test, the population does not appear to be approximately Gaussian, since there are quite a few observations at the upper bound of 1 and the data are clearly left-skewed. The sample size (<span class="math inline">\(n = 10\)</span>) is not large enough to rely on the CLT either. For the Wilcoxon signed-rank test, the data do not appear symmetric for the same reason stated above. The sample size is not large enough for the asymptotic approximation either.</p>
+<p>One noticable thing is that quite a few observations have the same value, which introduces ties if the Wilcoxon test is applied. Furthermore, there are several zeros in the second data set (paired difference), which complicates the ranking process. Thus, I might choose to use the one-sample t-test.</p>
+</section>
+<section id="part-b" class="level3">
+<h3 class="anchored" data-anchor-id="part-b">Part b</h3>
+<section id="research-question-and-data" class="level4">
+<h4 class="anchored" data-anchor-id="research-question-and-data">Research Question and Data</h4>
+<p>Statistical Questions:</p>
+<ol type="1">
+<li>Whether the dogs were better than chance, which we assume is 50%, at returning the new objects when requested.</li>
+<li>Whether there was a difference in the dogs’ retrieval performance between the direct and overhearing conditions.</li>
+</ol>
+<p>Researchers observed (n = 10) dogs and recorded the proportion of successful retrievals out of 12 tests for each dog. The observed proportions were</p>
+<p><span class="math inline">\(\{1.0000,\ 1.0000,\ 0.7500,\ 1.0000,\ 0.4167,\ 0.8333,\ 0.7500,\ 0.8333,\ 0.8333,\ 1.0000\}\)</span></p>
+<p>They also considered the paired differences (direct − overhearing):</p>
+<p><span class="math inline">\(\{-0.0833,\ 0.0000,\ -0.0833,\ -0.0833,\ 0.5833,\ 0.0833,\ -0.2500,\ 0.1667,\ 0.0000,\ -0.4167\}\)</span></p>
+</section>
+<section id="hypotheses" class="level4">
+<h4 class="anchored" data-anchor-id="hypotheses">Hypotheses</h4>
+<p>We want to test if the dogs were better than chance, so we use right sided test:</p>
+<p><span class="math inline">\(H_0: \mu_X = 0.50\)</span></p>
+<p><span class="math inline">\(H_a: \mu_X &gt; 0.50\)</span></p>
+<p>where <span class="math inline">\(\mu_X\)</span> is the population mean proportion of successful retrievals.</p>
+</section>
+<section id="conditions-for-use" class="level4">
+<h4 class="anchored" data-anchor-id="conditions-for-use">Conditions for Use</h4>
+<ol type="1">
+<li>The variable of interest in quantitative.</li>
+<li>The sample is probably representative of the larger population.</li>
+<li>The sample observations are independent.</li>
+<li>The underlying population distribution is not approximately Gaussian, since the observed data arae left-skewed and have several observations at the upper bound of 1. In addition, the sample size (<span class="math inline">\(n = 10\)</span>) is too small to use CLT.</li>
+</ol>
+</section>
+<section id="one-sample-t-test" class="level4">
+<h4 class="anchored" data-anchor-id="one-sample-t-test">One-Sample t-Test</h4>
+<p>The one-sample t-test was performed using the following R code:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.0000</span>, <span class="fl">1.0000</span>, <span class="fl">0.7500</span>, <span class="fl">1.0000</span>, <span class="fl">0.4167</span>,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>       <span class="fl">0.8333</span>, <span class="fl">0.7500</span>, <span class="fl">0.8333</span>, <span class="fl">0.8333</span>, <span class="fl">1.0000</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(x, <span class="at">mu =</span> <span class="fl">0.50</span>, <span class="at">alternative =</span> <span class="st">"greater"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One Sample t-test
+
+data:  x
+t = 5.9386, df = 9, p-value = 0.0001092
+alternative hypothesis: true mean is greater than 0.5
+95 percent confidence interval:
+ 0.736198      Inf
+sample estimates:
+mean of x 
+  0.84166 </code></pre>
+</div>
+</div>
+<p>The test statistic is calculated as</p>
+<p><span class="math display">\[
+t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}.
+\]</span> The sample mean was <span class="math inline">\(\bar{x} = 0.8417\)</span>. The test resulted in <span class="math inline">\(t = 5.9386\)</span> with <span class="math inline">\(df = 9\)</span> and a one-sided p-value of <span class="math inline">\(0.0001092\)</span>.</p>
+</section>
+<section id="p-value" class="level4">
+<h4 class="anchored" data-anchor-id="p-value"><span class="math inline">\(p\)</span>-value</h4>
+<p>We use a right-tailed test (<span class="math inline">\(\mu_X &gt; \mu_0\)</span>).</p>
+<ul>
+<li><p>Observations of t that are substantially larger than 0.5, which correspond to observations of <span class="math inline">\(\bar{x}\)</span> that are substantially larger than <span class="math inline">\(\mu_0\)</span>.</p></li>
+<li><p><span class="math inline">\(p\text{-value} = P(T \geq t) = P(T \geq 5.9386) = 0.0001092\)</span></p></li>
+</ul>
+</section>
+<section id="results-and-interpretation" class="level4">
+<h4 class="anchored" data-anchor-id="results-and-interpretation">Results and Interpretation</h4>
+<p>We use the significance level <span class="math inline">\(\alpha = 0.05\)</span>. Since the <span class="math inline">\(p\text{-value} = 0.0001092\)</span> is less than <span class="math inline">\(0.05\)</span>, we reject the null hypothesis.</p>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script src="../mouse-light.js"></script>

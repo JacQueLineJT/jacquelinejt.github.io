@@ -1,4 +1,92 @@
 ---
-title: "Homework 1"
+title: "Homework 1: One-Sample Inference"
 body-classes: hw1-page
+author: "Lions like to eat onions"
+format: html
 ---
+
+## Question 1
+
+### Part a
+
+The data are the proportions of successful retrievals out of 12 tests for each dog, so they are quantitative rather than simple 0/1 Bernoulli trials. Thus, a one-sample z-test is not a good fit.
+
+A one-sample t-test and Wilcoxon signed-rank test are plausible.
+
+For the one-sample t-test, the population does not appear to be approximately Gaussian, since there are quite a few observations at the upper bound of 1 and the data are clearly left-skewed. The sample size ($n = 10$) is not large enough to rely on the CLT either. For the Wilcoxon signed-rank test, the data do not appear symmetric for the same reason stated above. The sample size is not large enough for the asymptotic approximation either. 
+
+One noticable thing is that quite a few observations have the same value, which introduces ties if the Wilcoxon test is applied. Furthermore, there are several zeros in the second data set (paired difference), which complicates the ranking process. Thus, I might choose to use the one-sample t-test.
+
+
+### Part b
+
+#### Research Question and Data
+
+Statistical Questions:
+
+1. Whether the dogs were better than chance, which we assume is 50%, at returning the new objects when requested.
+2. Whether there was a difference in the dogs' retrieval performance between the direct and overhearing conditions.
+
+Researchers observed \(n = 10\) dogs and recorded the proportion of
+successful retrievals out of 12 tests for each dog. The observed
+proportions were
+
+$\{1.0000,\ 1.0000,\ 0.7500,\ 1.0000,\ 0.4167,\ 0.8333,\ 0.7500,\ 0.8333,\ 0.8333,\ 1.0000\}$
+
+
+They also considered the paired differences (direct − overhearing):
+
+$\{-0.0833,\ 0.0000,\ -0.0833,\ -0.0833,\ 0.5833,\ 0.0833,\ -0.2500,\ 0.1667,\ 0.0000,\ -0.4167\}$
+
+
+#### Hypotheses
+
+We want to test if the dogs were better than chance, so we use right sided test:
+
+$H_0: \mu_X = 0.50$
+
+$H_a: \mu_X > 0.50$
+
+where $\mu_X$ is the population mean proportion of successful retrievals.
+
+
+#### Conditions for Use
+
+1. The variable of interest in quantitative.
+2. The sample is probably representative of the larger population.
+3. The sample observations are independent.
+4. The underlying population distribution is not approximately Gaussian, since the observed data arae left-skewed and have several observations at the upper bound of 1. In addition, the sample size ($n = 10$) is too small to use CLT.
+
+#### One-Sample t-Test
+
+The one-sample t-test was performed using the following R code:
+
+```{r}
+x <- c(1.0000, 1.0000, 0.7500, 1.0000, 0.4167,
+       0.8333, 0.7500, 0.8333, 0.8333, 1.0000)
+
+t.test(x, mu = 0.50, alternative = "greater")
+```
+
+The test statistic is calculated as
+
+$$
+t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}.
+$$
+The sample mean was $\bar{x} = 0.8417$. The test resulted in
+$t = 5.9386$ with $df = 9$ and a one-sided p-value of $0.0001092$.
+
+
+#### $p$-value
+
+We use a right-tailed test ($\mu_X > \mu_0$).
+
+- Observations of t that are substantially larger than 0.5, which correspond to observations of $\bar{x}$ that are substantially larger than $\mu_0$.
+
+- $p\text{-value} = P(T \geq t) = P(T \geq 5.9386) = 0.0001092$
+
+
+#### Results and Interpretation
+
+We use the significance level $\alpha = 0.05$. Since the $p\text{-value} = 0.0001092$ is less than $0.05$, we reject the null hypothesis.
+

@@ -20,7 +20,7 @@ website:
       - section: "Data Analysis I"
         contents:
           - text: "Homework 1: One Sample Inference"
-            href: MATH354/1-HW-OneSampleInference/HW1.qmd
+            href: MATH354/HW1.qmd
 
 format:
   html:

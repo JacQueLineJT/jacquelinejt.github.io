@@ -318,12 +318,28 @@ h2 {
 h3 {
   font-family: "Courier Prime", "Courier New", Courier, monospace !important;
 
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0.012em;
 
   margin-top: 1.6rem;
 }
 
+/* Level 4 headings */
+
+h4 {
+  font-family: "Courier Prime", "Courier New", Courier, monospace !important;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h4::before {
+  content: "▶";
+  font-size: 0.65em;
+  margin-right: 0.7em;
+  vertical-align: 0.12em;
+}
 
 /* Paragraphs */
 
