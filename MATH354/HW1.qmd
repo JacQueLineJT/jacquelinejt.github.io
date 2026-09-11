@@ -86,7 +86,34 @@ We use a right-tailed test ($\mu_X > \mu_0$).
 - $p\text{-value} = P(T \geq t) = P(T \geq 5.9386) = 0.0001092$
 
 
-#### Results and Interpretation
+#### Results
 
-We use the significance level $\alpha = 0.05$. Since the $p\text{-value} = 0.0001092$ is less than $0.05$, we reject the null hypothesis.
+We use the significance level $\alpha = 0.05$. Since the $p\text{-value} = 0.0001092$ is less than $0.05$, we reject the null hypothesis. The data provide statistically discernible support for the alternative hypothesis.
 
+The test statistic $t = 5.9386$ indicates that the observed sample mean is approximately 5.94 standard errors above the null hypothesized mean of $0.50$. Therefore, the data suggest that the dogs' mean retrieval performance is better than chance.
+
+
+#### Effect Size
+
+To evaluate the magnitude of the effect, Hedges'$g$ was calculated.
+
+```{r}
+library(effectsize)
+
+test.result <- t.test(x, mu = 0.50, alternative = "greater")
+
+hedges_g(test.result)
+```
+
+The estimated effect size was Hedges'$g = 1.72$, indicating a large effect. The mean retrieval performance was approximately 1.72 standard deviations above the chance level of $0.50$.
+
+
+#### Confidence Interval
+
+The 95% confidence interval was obtained from the t-test result:
+
+```{r}
+test.result$conf.int
+```
+
+We are 95% confident that the population mean retrieval proportion is approximately $[0.736, \infty)$. Since this lower bound is above the chance level of $0.50$, the confidence interval is consistent with the conclusion that the dogs performed better than chance.

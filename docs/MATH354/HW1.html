@@ -322,9 +322,43 @@ t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}.
 <li><p><span class="math inline">\(p\text{-value} = P(T \geq t) = P(T \geq 5.9386) = 0.0001092\)</span></p></li>
 </ul>
 </section>
-<section id="results-and-interpretation" class="level4">
-<h4 class="anchored" data-anchor-id="results-and-interpretation">Results and Interpretation</h4>
-<p>We use the significance level <span class="math inline">\(\alpha = 0.05\)</span>. Since the <span class="math inline">\(p\text{-value} = 0.0001092\)</span> is less than <span class="math inline">\(0.05\)</span>, we reject the null hypothesis.</p>
+<section id="results" class="level4">
+<h4 class="anchored" data-anchor-id="results">Results</h4>
+<p>We use the significance level <span class="math inline">\(\alpha = 0.05\)</span>. Since the <span class="math inline">\(p\text{-value} = 0.0001092\)</span> is less than <span class="math inline">\(0.05\)</span>, we reject the null hypothesis. The data provide statistically discernible support for the alternative hypothesis.</p>
+<p>The test statistic <span class="math inline">\(t = 5.9386\)</span> indicates that the observed sample mean is approximately 5.94 standard errors above the null hypothesized mean of <span class="math inline">\(0.50\)</span>. Therefore, the data suggest that the dogs’ mean retrieval performance is better than chance.</p>
+</section>
+<section id="effect-size" class="level4">
+<h4 class="anchored" data-anchor-id="effect-size">Effect Size</h4>
+<p>To evaluate the magnitude of the effect, Hedges’ <span class="math inline">\(g\)</span> was calculated.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(effectsize)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>test.result <span class="ot">&lt;-</span> <span class="fu">t.test</span>(x, <span class="at">mu =</span> <span class="fl">0.50</span>, <span class="at">alternative =</span> <span class="st">"greater"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">hedges_g</span>(test.result)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hedges' g |      95% CI
+-----------------------
+1.72      | [0.88, Inf]
+
+- Deviation from a difference of 0.5.
+- One-sided CIs: upper bound fixed at [Inf].</code></pre>
+</div>
+</div>
+<p>The estimated effect size was Hedges’ <span class="math inline">\(g = 1.72\)</span>, indicating a large effect. The mean retrieval performance was approximately 1.72 standard deviations above the chance level of <span class="math inline">\(0.50\)</span>.</p>
+</section>
+<section id="confidence-interval" class="level4">
+<h4 class="anchored" data-anchor-id="confidence-interval">Confidence Interval</h4>
+<p>The 95% confidence interval was obtained from the t-test result:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>test.result<span class="sc">$</span>conf.int</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.736198      Inf
+attr(,"conf.level")
+[1] 0.95</code></pre>
+</div>
+</div>
+<p>We are 95% confident that the population mean retrieval proportion is approximately <span class="math inline">\([0.736, \infty)\)</span>. Since this lower bound is above the chance level of <span class="math inline">\(0.50\)</span>, the confidence interval is consistent with the conclusion that the dogs performed better than chance.</p>
 
 
 </section>
