@@ -221,3 +221,18 @@ and \\
 n(1-p) = 10(1-0.25) = 7.5,
 $$
 both of which are less than 15, so the Gaussian approximation conditions are not satisfied.
+
+
+### Part d
+
+No, it doesn't make sense to make inference using the Gaussian method.
+
+Given that all 10 dogs are successful, or $\hat p = 1$, the standard error of the sample would be 0, as calculated below:
+
+$$ 
+SE = \sqrt{\frac{\hat p(1-\hat p)}{n}}
+= \sqrt{\frac{1(0)}{10}} = 0.
+$$
+
+When we try to estimate $Z = \frac{estimate - null value}{SE}$, the denominator would become zero, which is undefined. It would be hard to estimate confidence interval too.
+

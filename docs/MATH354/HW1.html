@@ -222,6 +222,7 @@ window.Quarto = {
   <li><a href="#part-a-1" id="toc-part-a-1" class="nav-link" data-scroll-target="#part-a-1">Part a</a></li>
   <li><a href="#part-b-1" id="toc-part-b-1" class="nav-link" data-scroll-target="#part-b-1">Part b</a></li>
   <li><a href="#part-c" id="toc-part-c" class="nav-link" data-scroll-target="#part-c">Part c</a></li>
+  <li><a href="#part-d" id="toc-part-d" class="nav-link" data-scroll-target="#part-d">Part d</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -444,6 +445,16 @@ np = 10(0.25) = 2.5\\
 and \\
 n(1-p) = 10(1-0.25) = 7.5,
 \]</span> both of which are less than 15, so the Gaussian approximation conditions are not satisfied.</p>
+</section>
+<section id="part-d" class="level3">
+<h3 class="anchored" data-anchor-id="part-d">Part d</h3>
+<p>No, it doesn’t make sense to make inference using the Gaussian method.</p>
+<p>Given that all 10 dogs are successful, or <span class="math inline">\(\hat p = 1\)</span>, the standard error of the sample would be 0, as calculated below:</p>
+<p><span class="math display">\[
+SE = \sqrt{\frac{\hat p(1-\hat p)}{n}}
+= \sqrt{\frac{1(0)}{10}} = 0.
+\]</span></p>
+<p>When we try to estimate <span class="math inline">\(Z = \frac{estimate - null value}{SE}\)</span>, the denominator would become zero, which is undefined. It would be hard to estimate confidence interval too.</p>
 
 
 </section>
