@@ -139,7 +139,7 @@ body.hw1-page::after {
       rgba(0, 0, 0, 0.83),
       rgba(0, 0, 0, 0.83)
     ),
-    url("images/Auguste-Adolphe Bertsch/AAB4.jpg");
+    url("images/Auguste-Adolphe Bertsch/AAB3.jpg");
 }
 
 
@@ -190,7 +190,7 @@ body.about-page .background-ghost {
 
 body.hw1-page .background-ghost {
   background-image:
-    url("images/Auguste-Adolphe Bertsch/AAB4.jpg");
+    url("images/Auguste-Adolphe Bertsch/AAB3.jpg");
 }
 
 
@@ -255,8 +255,6 @@ body.hw1-page .background-ghost {
 .ghost-3 {
   display: none;
 }
-}
-
 
 
 /* =========================================================
@@ -324,6 +322,7 @@ h3 {
   margin-top: 1.6rem;
 }
 
+
 /* Level 4 headings */
 
 h4 {
@@ -340,6 +339,7 @@ h4::before {
   margin-right: 0.7em;
   vertical-align: 0.12em;
 }
+
 
 /* Paragraphs */
 
@@ -400,7 +400,21 @@ a:hover {
   font-size: 0.91rem;
   letter-spacing: 0.005em;
 
-  background-color: rgba(65, 65, 65, 0.28) !important;
+  /*
+     Thin translucent layer behind the left sidebar.
+     It stays almost constant through most of the sidebar,
+     then gradually disappears near the bottom.
+  */
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(65, 65, 65, 0.28) 0%,
+      rgba(65, 65, 65, 0.28) 68%,
+      rgba(65, 65, 65, 0.24) 78%,
+      rgba(65, 65, 65, 0.16) 87%,
+      rgba(65, 65, 65, 0.07) 94%,
+      rgba(65, 65, 65, 0) 100%
+    ) !important;
 }
 
 
@@ -498,6 +512,15 @@ a:hover {
   opacity: 0.70;
 
   animation: fadeIn 0.9s ease-out 0.18s both;
+
+  /*
+     Keep "On this page" visible while scrolling.
+  */
+  position: sticky !important;
+  top: 1.5rem;
+  align-self: start;
+
+  z-index: 1;
 }
 
 
@@ -824,11 +847,16 @@ body.mouse-active::before {
 /* Keep page content above effect */
 
 #quarto-content,
-#quarto-sidebar,
-#quarto-margin-sidebar {
+#quarto-sidebar {
   position: relative;
   z-index: 1;
 }
+
+
+/*
+   Do NOT set #quarto-margin-sidebar to position: relative here.
+   It needs to remain sticky.
+*/
 
 
 /* =========================
