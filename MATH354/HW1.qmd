@@ -2,7 +2,26 @@
 title: "Homework 1: One-Sample Inference"
 body-classes: hw1-page
 author: "Lions like to eat onions"
-format: html
+format:
+  html:
+    number-sections: true
+    code-fold: true
+    code-line-numbers: true
+    cap-location: top
+
+  pdf:
+    documentclass: article
+    number-sections: true
+    reference-section-title: "References"
+    code-line-numbers: true
+    cap-location: top
+    geometry:
+      - top=0.75in
+      - left=0.75in
+      - bottom=0.75in
+      - right=0.75in
+
+format-links: [pdf]
 ---
 
 ## Question 1
