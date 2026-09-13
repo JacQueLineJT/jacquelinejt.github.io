@@ -212,20 +212,20 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#question-1" id="toc-question-1" class="nav-link active" data-scroll-target="#question-1">Question 1</a>
+  <li><a href="#question-1" id="toc-question-1" class="nav-link active" data-scroll-target="#question-1"><span class="header-section-number">1</span> Question 1</a>
   <ul class="collapse">
-  <li><a href="#part-a" id="toc-part-a" class="nav-link" data-scroll-target="#part-a">Part a</a></li>
-  <li><a href="#part-b" id="toc-part-b" class="nav-link" data-scroll-target="#part-b">Part b</a></li>
+  <li><a href="#part-a" id="toc-part-a" class="nav-link" data-scroll-target="#part-a"><span class="header-section-number">1.1</span> Part a</a></li>
+  <li><a href="#part-b" id="toc-part-b" class="nav-link" data-scroll-target="#part-b"><span class="header-section-number">1.2</span> Part b</a></li>
   </ul></li>
-  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2"><span class="header-section-number">2</span> Question 2</a>
   <ul class="collapse">
-  <li><a href="#part-a-1" id="toc-part-a-1" class="nav-link" data-scroll-target="#part-a-1">Part a</a></li>
-  <li><a href="#part-b-1" id="toc-part-b-1" class="nav-link" data-scroll-target="#part-b-1">Part b</a></li>
-  <li><a href="#part-c" id="toc-part-c" class="nav-link" data-scroll-target="#part-c">Part c</a></li>
-  <li><a href="#part-d" id="toc-part-d" class="nav-link" data-scroll-target="#part-d">Part d</a></li>
+  <li><a href="#part-a-1" id="toc-part-a-1" class="nav-link" data-scroll-target="#part-a-1"><span class="header-section-number">2.1</span> Part a</a></li>
+  <li><a href="#part-b-1" id="toc-part-b-1" class="nav-link" data-scroll-target="#part-b-1"><span class="header-section-number">2.2</span> Part b</a></li>
+  <li><a href="#part-c" id="toc-part-c" class="nav-link" data-scroll-target="#part-c"><span class="header-section-number">2.3</span> Part c</a></li>
+  <li><a href="#part-d" id="toc-part-d" class="nav-link" data-scroll-target="#part-d"><span class="header-section-number">2.4</span> Part d</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="HW1.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -255,19 +255,19 @@ window.Quarto = {
 </header>
 
 
-<section id="question-1" class="level2">
-<h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
-<section id="part-a" class="level3">
-<h3 class="anchored" data-anchor-id="part-a">Part a</h3>
+<section id="question-1" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="question-1"><span class="header-section-number">1</span> Question 1</h2>
+<section id="part-a" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="part-a"><span class="header-section-number">1.1</span> Part a</h3>
 <p>The data are the proportions of successful retrievals out of 12 tests for each dog, so they are quantitative rather than simple 0/1 Bernoulli trials. Thus, a one-sample z-test is not a good fit.</p>
 <p>A one-sample t-test and Wilcoxon signed-rank test are plausible.</p>
 <p>For the one-sample t-test, the population does not appear to be approximately Gaussian, since there are quite a few observations at the upper bound of 1 and the data are clearly left-skewed. The sample size (<span class="math inline">\(n = 10\)</span>) is not large enough to rely on the CLT either. For the Wilcoxon signed-rank test, the data do not appear symmetric for the same reason stated above. The sample size is not large enough for the asymptotic approximation either.</p>
 <p>One noticable thing is that quite a few observations have the same value, which introduces ties if the Wilcoxon test is applied. Furthermore, there are several zeros in the second data set (paired difference), which complicates the ranking process. Thus, I might choose to use the one-sample t-test.</p>
 </section>
-<section id="part-b" class="level3">
-<h3 class="anchored" data-anchor-id="part-b">Part b</h3>
-<section id="research-question-and-data" class="level4">
-<h4 class="anchored" data-anchor-id="research-question-and-data">Research Question and Data</h4>
+<section id="part-b" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="part-b"><span class="header-section-number">1.2</span> Part b</h3>
+<section id="research-question-and-data" class="level4" data-number="1.2.1">
+<h4 data-number="1.2.1" class="anchored" data-anchor-id="research-question-and-data"><span class="header-section-number">1.2.1</span> Research Question and Data</h4>
 <p>Statistical Questions:</p>
 <ol type="1">
 <li>Whether the dogs were better than chance, which we assume is 50%, at returning the new objects when requested.</li>
@@ -278,15 +278,15 @@ window.Quarto = {
 <p>They also considered the paired differences (direct − overhearing):</p>
 <p><span class="math inline">\(\{-0.0833,\ 0.0000,\ -0.0833,\ -0.0833,\ 0.5833,\ 0.0833,\ -0.2500,\ 0.1667,\ 0.0000,\ -0.4167\}\)</span></p>
 </section>
-<section id="hypotheses" class="level4">
-<h4 class="anchored" data-anchor-id="hypotheses">Hypotheses</h4>
+<section id="hypotheses" class="level4" data-number="1.2.2">
+<h4 data-number="1.2.2" class="anchored" data-anchor-id="hypotheses"><span class="header-section-number">1.2.2</span> Hypotheses</h4>
 <p>We want to test if the dogs were better than chance, so we use right sided test:</p>
 <p><span class="math inline">\(H_0: \mu_X = 0.50\)</span></p>
 <p><span class="math inline">\(H_a: \mu_X &gt; 0.50\)</span></p>
 <p>where <span class="math inline">\(\mu_X\)</span> is the population mean proportion of successful retrievals.</p>
 </section>
-<section id="conditions-for-use" class="level4">
-<h4 class="anchored" data-anchor-id="conditions-for-use">Conditions for Use</h4>
+<section id="conditions-for-use" class="level4" data-number="1.2.3">
+<h4 data-number="1.2.3" class="anchored" data-anchor-id="conditions-for-use"><span class="header-section-number">1.2.3</span> Conditions for Use</h4>
 <ol type="1">
 <li>The variable of interest in quantitative.</li>
 <li>The sample is probably representative of the larger population.</li>
@@ -294,14 +294,17 @@ window.Quarto = {
 <li>The underlying population distribution is not approximately Gaussian, since the observed data arae left-skewed and have several observations at the upper bound of 1. In addition, the sample size (<span class="math inline">\(n = 10\)</span>) is too small to use CLT.</li>
 </ol>
 </section>
-<section id="one-sample-t-test" class="level4">
-<h4 class="anchored" data-anchor-id="one-sample-t-test">One-Sample t-Test</h4>
+<section id="one-sample-t-test" class="level4" data-number="1.2.4">
+<h4 data-number="1.2.4" class="anchored" data-anchor-id="one-sample-t-test"><span class="header-section-number">1.2.4</span> One-Sample t-Test</h4>
 <p>The one-sample t-test was performed using the following R code:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.0000</span>, <span class="fl">1.0000</span>, <span class="fl">0.7500</span>, <span class="fl">1.0000</span>, <span class="fl">0.4167</span>,</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>       <span class="fl">0.8333</span>, <span class="fl">0.7500</span>, <span class="fl">0.8333</span>, <span class="fl">0.8333</span>, <span class="fl">1.0000</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(x, <span class="at">mu =</span> <span class="fl">0.50</span>, <span class="at">alternative =</span> <span class="st">"greater"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-label="1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.0000</span>, <span class="fl">1.0000</span>, <span class="fl">0.7500</span>, <span class="fl">1.0000</span>, <span class="fl">0.4167</span>,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-label="2"></a>       <span class="fl">0.8333</span>, <span class="fl">0.7500</span>, <span class="fl">0.8333</span>, <span class="fl">0.8333</span>, <span class="fl">1.0000</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-label="3"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-label="4"></a><span class="fu">t.test</span>(x, <span class="at">mu =</span> <span class="fl">0.50</span>, <span class="at">alternative =</span> <span class="st">"greater"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     One Sample t-test
@@ -321,28 +324,31 @@ mean of x
 t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}.
 \]</span> The sample mean was <span class="math inline">\(\bar{x} = 0.8417\)</span>. The test resulted in <span class="math inline">\(t = 5.9386\)</span> with <span class="math inline">\(df = 9\)</span> and a one-sided p-value of <span class="math inline">\(0.0001092\)</span>.</p>
 </section>
-<section id="p-value" class="level4">
-<h4 class="anchored" data-anchor-id="p-value"><span class="math inline">\(p\)</span>-value</h4>
+<section id="p-value" class="level4" data-number="1.2.5">
+<h4 data-number="1.2.5" class="anchored" data-anchor-id="p-value"><span class="header-section-number">1.2.5</span> <span class="math inline">\(p\)</span>-value</h4>
 <p>We use a right-tailed test (<span class="math inline">\(\mu_X &gt; \mu_0\)</span>).</p>
 <ul>
 <li><p>Observations of t that are substantially larger than 0.5, which correspond to observations of <span class="math inline">\(\bar{x}\)</span> that are substantially larger than <span class="math inline">\(\mu_0\)</span>.</p></li>
 <li><p><span class="math inline">\(p\text{-value} = P(T \geq t) = P(T \geq 5.9386) = 0.0001092\)</span></p></li>
 </ul>
 </section>
-<section id="results" class="level4">
-<h4 class="anchored" data-anchor-id="results">Results</h4>
+<section id="results" class="level4" data-number="1.2.6">
+<h4 data-number="1.2.6" class="anchored" data-anchor-id="results"><span class="header-section-number">1.2.6</span> Results</h4>
 <p>We use the significance level <span class="math inline">\(\alpha = 0.05\)</span>. Since the <span class="math inline">\(p\text{-value} = 0.0001092\)</span> is less than <span class="math inline">\(0.05\)</span>, we reject the null hypothesis. The data provide statistically discernible support for the alternative hypothesis.</p>
 <p>The test statistic <span class="math inline">\(t = 5.9386\)</span> indicates that the observed sample mean is approximately 5.94 standard errors above the null hypothesized mean of <span class="math inline">\(0.50\)</span>. Therefore, the data suggest that the dogs’ mean retrieval performance is better than chance.</p>
 </section>
-<section id="effect-size" class="level4">
-<h4 class="anchored" data-anchor-id="effect-size">Effect Size</h4>
+<section id="effect-size" class="level4" data-number="1.2.7">
+<h4 data-number="1.2.7" class="anchored" data-anchor-id="effect-size"><span class="header-section-number">1.2.7</span> Effect Size</h4>
 <p>To evaluate the magnitude of the effect, Hedges’<span class="math inline">\(g\)</span> was calculated.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(effectsize)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>test.result <span class="ot">&lt;-</span> <span class="fu">t.test</span>(x, <span class="at">mu =</span> <span class="fl">0.50</span>, <span class="at">alternative =</span> <span class="st">"greater"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">hedges_g</span>(test.result)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-label="1"></a><span class="fu">library</span>(effectsize)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-label="2"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-label="3"></a>test.result <span class="ot">&lt;-</span> <span class="fu">t.test</span>(x, <span class="at">mu =</span> <span class="fl">0.50</span>, <span class="at">alternative =</span> <span class="st">"greater"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-label="4"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-label="5"></a><span class="fu">hedges_g</span>(test.result)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hedges' g |      95% CI
 -----------------------
@@ -354,11 +360,14 @@ t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}.
 </div>
 <p>The estimated effect size was Hedges’<span class="math inline">\(g = 1.72\)</span>, indicating a large effect. The mean retrieval performance was approximately 1.72 standard deviations above the chance level of <span class="math inline">\(0.50\)</span>.</p>
 </section>
-<section id="confidence-interval" class="level4">
-<h4 class="anchored" data-anchor-id="confidence-interval">Confidence Interval</h4>
+<section id="confidence-interval" class="level4" data-number="1.2.8">
+<h4 data-number="1.2.8" class="anchored" data-anchor-id="confidence-interval"><span class="header-section-number">1.2.8</span> Confidence Interval</h4>
 <p>The 95% confidence interval was obtained from the t-test result:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>test.result<span class="sc">$</span>conf.int</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-label="1"></a>test.result<span class="sc">$</span>conf.int</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.736198      Inf
 attr(,"conf.level")
@@ -369,14 +378,14 @@ attr(,"conf.level")
 </section>
 </section>
 </section>
-<section id="question-2" class="level2">
-<h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
-<section id="part-a-1" class="level3">
-<h3 class="anchored" data-anchor-id="part-a-1">Part a</h3>
+<section id="question-2" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="question-2"><span class="header-section-number">2</span> Question 2</h2>
+<section id="part-a-1" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="part-a-1"><span class="header-section-number">2.1</span> Part a</h3>
 <p>The data a qualitative, and each trial is a Bournulli trial (either succeed or fail), so binomial distribution is possible. However, the trials may not be independent, since there should be correlations between each trials. Specifically, the performance of each dog in the two new-toy trials may tend to be consistent. Moreover, the probability of selecting the new toy by chance may not be exactly 50%, depending on dogs’ behaviors.</p>
 </section>
-<section id="part-b-1" class="level3">
-<h3 class="anchored" data-anchor-id="part-b-1">Part b</h3>
+<section id="part-b-1" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="part-b-1"><span class="header-section-number">2.2</span> Part b</h3>
 <p>The probability that a dog succeed in both trials are</p>
 <p><span class="math display">\[
 p = (0.50)(0.50) = 0.25.
@@ -395,8 +404,8 @@ P(B=10) = \binom{10}{10}(0.25)^{10}(0.75)^0=(0.25)^{10} \approx 9.54 \times 10^{
 \]</span></p>
 <p>Thus, the probability that all <span class="math inline">\(n=10\)</span> dogs would get both trials correct is approximately <span class="math inline">\(9.54 \times 10^{-7}\)</span>.</p>
 </section>
-<section id="part-c" class="level3">
-<h3 class="anchored" data-anchor-id="part-c">Part c</h3>
+<section id="part-c" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="part-c"><span class="header-section-number">2.3</span> Part c</h3>
 <p>The Gaussian approximation has mean</p>
 <p><span class="math display">\[
 \mu_Y = np = 10(0.25) = 2.5
@@ -446,8 +455,8 @@ and \\
 n(1-p) = 10(1-0.25) = 7.5,
 \]</span> both of which are less than 15, so the Gaussian approximation conditions are not satisfied.</p>
 </section>
-<section id="part-d" class="level3">
-<h3 class="anchored" data-anchor-id="part-d">Part d</h3>
+<section id="part-d" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="part-d"><span class="header-section-number">2.4</span> Part d</h3>
 <p>No, it doesn’t make sense to make inference using the Gaussian method.</p>
 <p>Given that all 10 dogs are successful, or <span class="math inline">\(\hat p = 1\)</span>, the standard error of the sample would be 0, as calculated below:</p>
 <p><span class="math display">\[
