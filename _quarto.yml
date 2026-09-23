@@ -21,6 +21,8 @@ website:
         contents:
           - text: "Homework 1: One Sample Inference"
             href: MATH354/HW1.qmd
+          - text: "Homework 2: k Sample Inference"
+            href: MATH354/HW2.qmd
 
 format:
   html:
