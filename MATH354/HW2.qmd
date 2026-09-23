@@ -261,3 +261,95 @@ Doubling the sample size from 40 to 80 per group increases power,
 but is still insufficient to achieve 80% power for every pairwise
 comparison. In specific, the small difference between stages
 0 and 1 (3.11 − 2.92 = 0.19) remains difficult to detect.
+
+
+## Question 3
+
+### Part a
+
+Let $\mu_{2C}$, $\mu_{6C}$, $\mu_{16C}$, and $\mu_{16T}$ denote
+the population mean SUVmax values for the 2-month control,
+6-month control, 16-month control, and 16-month treatment groups,
+respectively.
+
+$$
+H_0: \mu_{2C} = \mu_{6C} = \mu_{16C} = \mu_{16T}
+$$
+
+$$
+H_a: \text{At least one population mean differs.}
+$$
+
+### Part b
+
+```{r}
+dat3 <- data.frame(
+  SUVmax = c(
+    1.48969, 1.30168, 1.30620,
+    4.36000, 4.28807, 3.64184,
+    7.30182, 7.12416, 8.28764,
+    4.69304, 2.51326, 2.38019
+  ),
+  group = factor(
+    rep(c("2M Control", "6M Control",
+          "16M Control", "16M Treatment"), each = 3),
+    levels = c("2M Control", "6M Control",
+               "16M Control", "16M Treatment")
+  )
+)
+
+# Means and standard deviations
+aggregate(SUVmax ~ group, data = dat3, FUN = mean)
+aggregate(SUVmax ~ group, data = dat3, FUN = sd)
+
+# Display all observations
+stripchart(SUVmax ~ group, data = dat3,
+           vertical = TRUE, method = "stack", pch = 19,
+           xlab = "Group", ylab = "Heart SUVmax",
+           main = "Heart SUVmax by Age and Treatment",
+           cex.axis = 0.8)
+```
+
+Among the control groups, mean heart SUVmax increased with age
+(approximately 1.37, 4.10, and 7.57 for 2, 6, and 16 months,
+respectively). The 16-month treatment group had a lower mean
+(approximately 3.20) than the 16-month control group, placing it
+between the two younger control groups.
+
+### Part c
+
+```{r}
+test3 <- oneway.test(SUVmax ~ group, data = dat3)
+test3
+```
+
+SUVmax is quantitative. The sample standard deviations differ
+substantially across groups, so I used Welch's ANOVA because it does
+not assume equal population variances. The rats are not connected in certain ways so I assume independence. The observations per group are three, which is low, so the results should be interpreted cautiously.
+
+Welch's ANOVA gives
+$F = `r round(unname(test3$statistic), 2)`$,
+with `r round(unname(test3$parameter[1]), 2)` and
+`r round(unname(test3$parameter[2]), 2)` degrees of freedom
+(p = `r signif(test3$p.value, 3)`).
+Since p < 0.05, we reject the null hypothesis. The data provide
+statistically discernible support that at least one population
+mean heart SUVmax differs among the four groups.
+
+### Part d
+
+```{r}
+posthoc3 <- rstatix::games_howell_test(
+  dat3, SUVmax ~ group
+)
+
+posthoc3
+```
+
+Games–Howell comparisons showed statistically discernible increases in mean heart SUVmax across the control groups: 2 versus 6 months (adjusted p = 0.0119), 2 versus 16 months (p = 0.0072), and 6 versus 16 months (p = 0.00801). The 16-month treatment group had a lower mean than the 16-month control group (estimated difference = −4.38, adjusted p = 0.0431), supporting a reduction associated with low-dose nicotine.
+
+The treatment group did not differ significantly from the 2-month or 6-month control groups (adjusted p = 0.308 and 0.698, respectively), but these results do not establish equivalence to younger mice.
+
+### Part e
+
+The results support the hypothesis that SUVmax increases with age and is reduced by low-dose nicotine in older mice. All three control groups differed significantly, with higher mean SUVmax at older ages. Although the treatment group did not differ significantly from the younger controls, this does not establish that treatment restored SUVmax to younger levels. 
