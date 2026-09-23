@@ -470,60 +470,39 @@ NOTE: n is number in each group</code></pre>
 </div>
 </div>
 <p>An overall ANOVA can detect differences among groups having different means. However, detecting the smaller difference between stages 1 and 2 is harder, especially after Tukey’s adjustment for multiple comparisons.</p>
+<p>With 40 participants per group, the power is only about 7.9%. Using the pooled variance of 0.7152, approximately 293 participants per group are needed to achieve 80% power for this comparison.</p>
 </section>
 <section id="part-d" class="level3" data-number="2.4">
 <h3 data-number="2.4" class="anchored" data-anchor-id="part-d"><span class="header-section-number">2.4</span> Part d</h3>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-label="1"></a><span class="fu">library</span>(Superpower)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-label="1"></a><span class="fu">library</span>(Superpower)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-label="2"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-label="3"></a><span class="cf">for</span> (n <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">40</span>, <span class="dv">80</span>)) {</span>
+<span id="cb20-4"><a href="#cb20-4" aria-label="4"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-label="5"></a>  design <span class="ot">&lt;-</span> <span class="fu">ANOVA_design</span>(</span>
+<span id="cb20-6"><a href="#cb20-6" aria-label="6"></a>    <span class="at">design =</span> <span class="st">"5b"</span>,</span>
+<span id="cb20-7"><a href="#cb20-7" aria-label="7"></a>    <span class="at">n =</span> n,</span>
+<span id="cb20-8"><a href="#cb20-8" aria-label="8"></a>    <span class="at">mu =</span> <span class="fu">c</span>(<span class="fl">2.92</span>, <span class="fl">3.11</span>, <span class="fl">3.36</span>, <span class="fl">4.04</span>, <span class="fl">4.35</span>),</span>
+<span id="cb20-9"><a href="#cb20-9" aria-label="9"></a>    <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="fl">0.80</span>),</span>
+<span id="cb20-10"><a href="#cb20-10" aria-label="10"></a>    <span class="at">plot =</span> <span class="cn">FALSE</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-label="11"></a>  )</span>
+<span id="cb20-12"><a href="#cb20-12" aria-label="12"></a></span>
+<span id="cb20-13"><a href="#cb20-13" aria-label="13"></a>  result <span class="ot">&lt;-</span> <span class="fu">ANOVA_power</span>(</span>
+<span id="cb20-14"><a href="#cb20-14" aria-label="14"></a>    design,</span>
+<span id="cb20-15"><a href="#cb20-15" aria-label="15"></a>    <span class="at">nsims =</span> <span class="dv">1000</span>,</span>
+<span id="cb20-16"><a href="#cb20-16" aria-label="16"></a>    <span class="at">seed =</span> <span class="dv">354</span>,</span>
+<span id="cb20-17"><a href="#cb20-17" aria-label="17"></a>    <span class="at">emm =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb20-18"><a href="#cb20-18" aria-label="18"></a>    <span class="at">emm_p_adjust =</span> <span class="st">"tukey"</span>,</span>
+<span id="cb20-19"><a href="#cb20-19" aria-label="19"></a>    <span class="at">verbose =</span> <span class="cn">FALSE</span></span>
+<span id="cb20-20"><a href="#cb20-20" aria-label="20"></a>  )</span>
+<span id="cb20-21"><a href="#cb20-21" aria-label="21"></a></span>
+<span id="cb20-22"><a href="#cb20-22" aria-label="22"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Sample size per group:"</span>, n))</span>
+<span id="cb20-23"><a href="#cb20-23" aria-label="23"></a>  <span class="fu">print</span>(result<span class="sc">$</span>main_result)</span>
+<span id="cb20-24"><a href="#cb20-24" aria-label="24"></a>  <span class="fu">print</span>(result<span class="sc">$</span>emm_results)</span>
+<span id="cb20-25"><a href="#cb20-25" aria-label="25"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Registered S3 method overwritten by 'lme4':
-  method           from
-  na.action.merMod car </code></pre>
-</div>
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-label="1"></a><span class="cf">for</span> (n <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">40</span>, <span class="dv">80</span>)) {</span>
-<span id="cb22-2"><a href="#cb22-2" aria-label="2"></a></span>
-<span id="cb22-3"><a href="#cb22-3" aria-label="3"></a>  design <span class="ot">&lt;-</span> <span class="fu">ANOVA_design</span>(</span>
-<span id="cb22-4"><a href="#cb22-4" aria-label="4"></a>    <span class="at">design =</span> <span class="st">"5b"</span>,</span>
-<span id="cb22-5"><a href="#cb22-5" aria-label="5"></a>    <span class="at">n =</span> n,</span>
-<span id="cb22-6"><a href="#cb22-6" aria-label="6"></a>    <span class="at">mu =</span> <span class="fu">c</span>(<span class="fl">2.92</span>, <span class="fl">3.11</span>, <span class="fl">3.36</span>, <span class="fl">4.04</span>, <span class="fl">4.35</span>),</span>
-<span id="cb22-7"><a href="#cb22-7" aria-label="7"></a>    <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="fl">0.80</span>),</span>
-<span id="cb22-8"><a href="#cb22-8" aria-label="8"></a>    <span class="at">plot =</span> <span class="cn">FALSE</span></span>
-<span id="cb22-9"><a href="#cb22-9" aria-label="9"></a>  )</span>
-<span id="cb22-10"><a href="#cb22-10" aria-label="10"></a></span>
-<span id="cb22-11"><a href="#cb22-11" aria-label="11"></a>  result <span class="ot">&lt;-</span> <span class="fu">ANOVA_power</span>(</span>
-<span id="cb22-12"><a href="#cb22-12" aria-label="12"></a>    design,</span>
-<span id="cb22-13"><a href="#cb22-13" aria-label="13"></a>    <span class="at">nsims =</span> <span class="dv">1000</span>,</span>
-<span id="cb22-14"><a href="#cb22-14" aria-label="14"></a>    <span class="at">seed =</span> <span class="dv">354</span>,</span>
-<span id="cb22-15"><a href="#cb22-15" aria-label="15"></a>    <span class="at">emm =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb22-16"><a href="#cb22-16" aria-label="16"></a>    <span class="at">emm_p_adjust =</span> <span class="st">"tukey"</span>,</span>
-<span id="cb22-17"><a href="#cb22-17" aria-label="17"></a>    <span class="at">verbose =</span> <span class="cn">FALSE</span></span>
-<span id="cb22-18"><a href="#cb22-18" aria-label="18"></a>  )</span>
-<span id="cb22-19"><a href="#cb22-19" aria-label="19"></a></span>
-<span id="cb22-20"><a href="#cb22-20" aria-label="20"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Sample size per group:"</span>, n))</span>
-<span id="cb22-21"><a href="#cb22-21" aria-label="21"></a>  <span class="fu">print</span>(result<span class="sc">$</span>main_result)</span>
-<span id="cb22-22"><a href="#cb22-22" aria-label="22"></a>  <span class="fu">print</span>(result<span class="sc">$</span>emm_results)</span>
-<span id="cb22-23"><a href="#cb22-23" aria-label="23"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: `aes_string()` was deprecated in ggplot2 3.0.0.
-ℹ Please use tidy evaluation idioms with `aes()`.
-ℹ See also `vignette("ggplot2-in-packages")` for more information.
-ℹ The deprecated feature was likely used in the Superpower package.
-  Please report the issue at
-  &lt;https://github.com/arcaldwell49/Superpower/issues&gt;.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-ℹ Please use `linewidth` instead.
-ℹ The deprecated feature was likely used in the Superpower package.
-  Please report the issue at
-  &lt;https://github.com/arcaldwell49/Superpower/issues&gt;.</code></pre>
-</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Sample size per group: 40"
         power effect_size

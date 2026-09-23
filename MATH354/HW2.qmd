@@ -221,11 +221,15 @@ means. However, detecting the smaller difference between
 stages 1 and 2 is harder, especially after Tukey's adjustment
 for multiple comparisons.
 
+With 40 participants per group, the power is only about 7.9%.
+Using the pooled variance of 0.7152, approximately 293 participants
+per group are needed to achieve 80% power for this comparison.
+
 ### Part d
 
 ```{r}
 #| cache: true
-
+#| warning: false
 library(Superpower)
 
 for (n in c(40, 80)) {
